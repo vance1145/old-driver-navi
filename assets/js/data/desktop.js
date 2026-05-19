@@ -2,7 +2,7 @@ NAV_DATA.categories.push({
   id: "desktop", name: "本地工具", icon: "", links: [
     { title: "7-Zip", url: "https://www.7-zip.org/", desc: "免费开源压缩工具｜解压全能王", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly93d3cuNy16aXAub3JnLw==" },
     { title: "Geek Uninstaller", url: "https://geekuninstaller.com/", desc: "强力卸载工具｜清除残余文件和注册表", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly9nZWVrdW5pbnN0YWxsZXIuY29tLw==" },
-    { title: "SpaceSniffer", url: "http://www.uderzo.it/main_products/space_sniffer/", desc: "磁盘空间分析｜可视化占用一目了然", icon: "https://favicon.png.pub/v1/aHR0cDovL3d3dy51ZGVyem8uaXQvbWFpbl9wcm9kdWN0cy9zcGFjZV9zbmlmZmVyLw==" },
+    { title: "SpaceSniffer", url: "http://www.uderzo.it/main_products/space_sniffer/", desc: "磁盘空间分析｜看看 C 盘到底被什么塞满了", icon: "https://favicon.png.pub/v1/aHR0cDovL3d3dy51ZGVyem8uaXQvbWFpbl9wcm9kdWN0cy9zcGFjZV9zbmlmZmVyLw==" },
     { title: "Snipaste", url: "https://www.snipaste.com/", desc: "截图贴图神器｜截图后悬浮在屏幕上", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly93d3cuc25pcGFzdGUuY29tLw==" },
     { title: "PowerToys", url: "https://learn.microsoft.com/en-us/windows/powertoys/", desc: "微软官方工具集｜取色/分屏/批量重命名", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly9sZWFybi5taWNyb3NvZnQuY29tL2VuLXVzL3dpbmRvd3MvcG93ZXJ0b3lzLw==" },
     { title: "PotPlayer", url: "https://potplayer.daum.net/", desc: "最强视频播放器｜万能格式+极致性能", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly9wb3RwbGF5ZXIuZGF1bS5uZXQv" },
