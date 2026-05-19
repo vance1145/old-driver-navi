@@ -15,6 +15,7 @@
   --accent-light: #555;
   --accent-bg: rgba(0, 0, 0, 0.05);
   --scrollbar: rgba(0, 0, 0, 0.1);
+  --scrollbar-hover: rgba(0, 0, 0, 0.25);
   --cat-header-bg: rgba(0, 0, 0, 0.02);
 }
 
@@ -35,6 +36,7 @@
   --accent-light: #bbb;
   --accent-bg: rgba(255, 255, 255, 0.06);
   --scrollbar: rgba(255, 255, 255, 0.08);
+  --scrollbar-hover: rgba(255, 255, 255, 0.2);
   --cat-header-bg: rgba(255, 255, 255, 0.03);
 }
 
@@ -227,7 +229,7 @@ a { color: inherit; text-decoration: none; }
   border-radius: 3px;
   min-height: 30px;
 }
-.cat-body:hover::-webkit-scrollbar-thumb { background: var(--text-muted); }
+.cat-body:hover::-webkit-scrollbar-thumb { background: var(--scrollbar-hover); }
 
 /* ── Compact List Items ── */
 .cl-item {
