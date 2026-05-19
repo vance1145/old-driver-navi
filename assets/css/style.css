@@ -11,9 +11,9 @@
   --border: rgba(0, 0, 0, 0.08);
   --shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
   --shadow-hover: 0 4px 12px rgba(0, 0, 0, 0.1);
-  --accent: #1a1a2e;
-  --accent-light: #555;
-  --accent-bg: rgba(0, 0, 0, 0.05);
+  --accent: #5B8DEF;
+  --accent-light: #7DA5F3;
+  --accent-bg: rgba(91, 141, 239, 0.08);
   --scrollbar: rgba(0, 0, 0, 0.1);
   --scrollbar-hover: rgba(0, 0, 0, 0.25);
   --cat-header-bg: rgba(0, 0, 0, 0.02);
@@ -32,9 +32,9 @@
   --border: rgba(255, 255, 255, 0.06);
   --shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
   --shadow-hover: 0 4px 12px rgba(0, 0, 0, 0.5);
-  --accent: #e0e0f0;
-  --accent-light: #bbb;
-  --accent-bg: rgba(255, 255, 255, 0.06);
+  --accent: #7DA5F3;
+  --accent-light: #9BBBF7;
+  --accent-bg: rgba(125, 165, 243, 0.12);
   --scrollbar: rgba(255, 255, 255, 0.08);
   --scrollbar-hover: rgba(255, 255, 255, 0.2);
   --cat-header-bg: rgba(255, 255, 255, 0.03);
