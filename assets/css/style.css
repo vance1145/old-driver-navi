@@ -143,7 +143,7 @@ a { color: inherit; text-decoration: none; }
   font-weight: 600;
 }
 .ef-label { flex: 1; text-align: center; }
-.ef-arrow { font-size: 11px; color: var(--text-muted); transition: transform 0.2s; line-height: 1; }
+.ef-arrow { font-size: 14px; color: var(--text-muted); transition: transform 0.2s; line-height: 1; }
 .engine-select.open .ef-arrow { transform: rotate(180deg); }
 
 .ef-dropdown {
