@@ -6,6 +6,8 @@
 
 ![预览](assets/images/preview.png)
 
+收录 9 大分类共 140+ 精选站点：🤖 AI · 🛠 工具 · 💻 本地 · 🎮 游戏 · 🎬 影视 · 📖 动漫 · 🖼 漫画 · 📚 轻小说 · 📱 电子书（🔞 限制内容需 `?mode=nsfw`）
+
 ## 特性
 
 - 🔍 **一框两用** — 输入实时搜索站内所有链接的标题和描述；回车跳转搜索引擎
@@ -42,7 +44,6 @@ assets/
     data/adult.js              # 动态加载（?mode=nsfw）
     utils/theme.js             # 主题切换与持久化
     utils/storage.js           # localStorage 封装
-    components/widgets.js      # 时钟组件
     components/header.js       # 顶栏、搜索、搜索引擎选择
     components/linkCard.js     # 链接条目渲染与自定义链接操作
     components/category.js     # 分类卡片渲染
