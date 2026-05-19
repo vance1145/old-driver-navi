@@ -45,8 +45,6 @@ const LinkCard = {
 
   init() {
     document.querySelector('.content').addEventListener('click', (e) => {
-      if (e.target.closest('.cl-actions')) return;
-
       const editBtn = e.target.closest('.edit-link');
       if (editBtn) {
         e.stopPropagation();

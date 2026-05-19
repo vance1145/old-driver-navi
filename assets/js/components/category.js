@@ -16,17 +16,20 @@ const Category = {
 
   renderCustomLinks() {
     const links = Storage.getCustomLinks();
-    if (links.length === 0) return '';
+    const bodyContent = links.length === 0
+      ? '<div style="padding:10px 14px;font-size:12px;color:var(--text-muted);text-align:center">暂无收藏</div>'
+      : links.map((link, i) => LinkCard.render(link, 'custom', i, true, link.id)).join('');
 
     return `
       <div class="cat-container" id="category-custom" data-category="custom" style="animation: fadeInScale 0.3s ease 0s both;">
         <div class="cat-header">
           <span class="cat-icon">📌</span>
           <span class="cat-title">我的收藏</span>
+          <span class="cl-add-import" id="importExportLink" title="导入/导出">📥</span>
           <span class="cat-count">${links.length}</span>
         </div>
-        <div class="cat-body" id="catBody-custom">
-          ${links.map((link, i) => LinkCard.render(link, 'custom', i, true, link.id)).join('')}
+        <div class="cat-body" id="catBody-custom" style="max-height:252px">
+          ${bodyContent}
         </div>
         <div class="cl-add" data-category="custom"><span>+</span> 添加链接</div>
       </div>
@@ -62,6 +65,11 @@ const Category = {
       const addBtn = e.target.closest('.cl-add');
       if (addBtn) {
         App.showAddLinkModal(addBtn.dataset.category);
+        return;
+      }
+      if (e.target.closest('#importExportLink')) {
+        App.showImportExportModal();
+        return;
       }
     });
 

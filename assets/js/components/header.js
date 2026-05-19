@@ -108,7 +108,6 @@ const Header = {
               <div class="clock-time" id="clockTime">00:00</div>
               <div class="clock-date" id="clockDate">----年--月--日</div>
             </div>
-            <button class="theme-toggle" id="importExportBtn" aria-label="导入/导出">📥</button>
             <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌙</button>
           </div>
         </div>
@@ -170,8 +169,6 @@ const Header = {
       }
       if (e.key === 'Escape') { searchInput.blur(); App.clearSearch(); }
     });
-
-    document.getElementById('importExportBtn').addEventListener('click', () => App.showImportExportModal());
 
     detectNetworkAndUpdate();
   },

@@ -253,6 +253,7 @@ a { color: inherit; text-decoration: none; }
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 12px;
+  align-items: start;
 }
 
 .cat-container {
@@ -275,6 +276,8 @@ a { color: inherit; text-decoration: none; }
 .cat-icon { font-size: 16px; flex-shrink: 0; }
 .cat-title { font-size: 14px; font-weight: 600; color: var(--text); flex: 1; }
 .cat-count { font-size: 11px; color: var(--text-muted); flex-shrink: 0; }
+.cl-add-import { cursor:pointer; flex-shrink:0; font-size:13px; padding:4px 6px; border-radius:6px; transition:background .15s; line-height:1; display:inline-flex; align-items:center; }
+.cl-add-import:hover { background:var(--accent-bg); }
 
 .cat-body {
   max-height: 280px;
@@ -350,6 +353,7 @@ a { color: inherit; text-decoration: none; }
   overflow: hidden;
   text-overflow: ellipsis;
   flex: 0 1 auto;
+  min-width: 0;
 }
 
 /* ── Add Link ── */
@@ -527,8 +531,6 @@ a { color: inherit; text-decoration: none; }
   .content { padding: 12px; }
   .clock-widget { display: none; }
   .cat-body { max-height: 280px; }
-  .cl-title { flex: 0 1 auto; min-width: 0; }
-  .cl-desc { flex: 1; min-width: 0; }
 }
 @media (max-width: 480px) {
   .engine-select .ef-btn { width: 70px; padding: 5px 4px; font-size: 11px; }
