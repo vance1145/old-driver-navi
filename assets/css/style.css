@@ -260,7 +260,7 @@ a { color: inherit; text-decoration: none; }
 
 .cat-body {
   max-height: 340px;
-  overflow-y: scroll;
+  overflow-y: auto;
   scroll-behavior: smooth;
   scrollbar-width: thin;
 }
