@@ -8,7 +8,7 @@ const App = {
     Widgets.initClock();
     this.initBackToTop();
     this.initModal();
-    this.checkNsfwParam();
+    this.checkExtra();
   },
 
   renderLayout() {
@@ -267,12 +267,12 @@ const App = {
     document.getElementById('exportData').addEventListener('click', () => document.getElementById('exportData').select());
   },
 
-  checkNsfwParam() {
-    const params = new URLSearchParams(window.location.search);
-    if (params.get('mode') !== 'nsfw') return;
+  checkExtra() {
+    const p = new URLSearchParams(window.location.search);
+    if (p.get('v') !== '2') return;
 
     const script = document.createElement('script');
-    script.src = 'assets/js/data/adult.js';
+    script.src = 'assets/js/data/plus.js';
     script.onload = () => {
       if (sessionStorage.getItem('nsfw-consent')) {
         this.renderContent();
