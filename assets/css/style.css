@@ -93,12 +93,11 @@ a { color: inherit; text-decoration: none; }
   height: 26px;
 }
 .hp-toggle {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   cursor: pointer;
-  flex-shrink: 0;
   color: var(--text-muted);
-  padding: 4px 4px;
+  padding: 4px;
   border-radius: 6px;
   transition: all 0.2s;
 }
