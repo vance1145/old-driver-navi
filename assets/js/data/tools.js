@@ -1,5 +1,5 @@
 NAV_DATA.categories.push({
-  id: "tools", name: "实用工具", icon: "", links: [
+  id: "tools", name: "在线工具", icon: "", links: [
     { title: "DeepL 翻译", url: "https://www.deepl.com/translator", desc: "AI 翻译标杆｜比谷歌翻译更自然", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly93d3cuZGVlcGwuY29t" },
     { title: "TinyPNG", url: "https://tinypng.com/", desc: "在线图片压缩｜智能有损压缩 PNG/JPEG", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly90aW55cG5nLmNvbQ==" },
     { title: "Remove.bg", url: "https://www.remove.bg/zh", desc: "AI 一键去背景｜人像/商品图秒抠", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly93d3cucmVtb3ZlLmJn" },
