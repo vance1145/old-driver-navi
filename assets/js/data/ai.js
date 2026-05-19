@@ -1,9 +1,9 @@
 NAV_DATA.categories.push({
   id: "ai", name: "AI 对话助手", icon: "", links: [
     { title: "ChatGPT", url: "https://chat.openai.com", desc: "OpenAI｜全球最受欢迎的 AI 对话助手", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly9jaGF0Lm9wZW5haS5jb20=" },
-    { title: "DeepSeek", url: "https://chat.deepseek.com", desc: "深度求索｜国产开源大模型标杆", icon: "https://icons.duckduckgo.com/ip3/deepseek.com.ico" },
-    { title: "Gemini", url: "https://gemini.google.com", desc: "Google｜多模态 AI，深度整合谷歌生态", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly9nZW1pbmkuZ29vZ2xlLmNvbQ==" },
     { title: "Claude", url: "https://claude.ai", desc: "Anthropic｜安全可控，写作与长文处理顶尖", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly9jbGF1ZGUuYWk=" },
+    { title: "Gemini", url: "https://gemini.google.com", desc: "Google｜多模态 AI，深度整合谷歌生态", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly9nZW1pbmkuZ29vZ2xlLmNvbQ==" },
+    { title: "DeepSeek", url: "https://chat.deepseek.com", desc: "深度求索｜国产开源大模型标杆", icon: "https://icons.duckduckgo.com/ip3/deepseek.com.ico" },
     { title: "Grok", url: "https://grok.com", desc: "xAI｜幽默不羁，实时接入 X 平台数据", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly9ncm9rLmNvbQ==" },
     { title: "Perplexity", url: "https://www.perplexity.ai", desc: "答案引擎｜每条回答附带来源引用", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly93d3cucGVycGxleGl0eS5haQ==" },
     { title: "豆包", url: "https://www.doubao.com", desc: "字节跳动｜中文最受欢迎的免费 AI 助手", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly93d3cuZG91YmFvLmNvbQ==" },
