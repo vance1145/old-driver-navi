@@ -4,8 +4,10 @@ function toFaviconUrl(icon) {
     const b64 = icon.match(/favicon\.png\.pub\/v1\/(\S+)/)?.[1];
     if (b64) {
       const url = atob(b64);
-      const domain = new URL(url).hostname;
-      return `https://icons.duckduckgo.com/ip3/${domain}.ico`;
+      const host = new URL(url).hostname;
+      const parts = host.split('.');
+      const root = parts.length > 2 ? parts.slice(-2).join('.') : host;
+      return `https://icons.duckduckgo.com/ip3/${root}.ico`;
     }
   } catch {}
   return icon;
