@@ -2,8 +2,12 @@ const SEARCH_ENGINES = [
   { id: 'google', name: 'Google', url: 'https://www.google.com/search?q=', favicon: 'https://icons.duckduckgo.com/ip3/www.google.com.ico' },
   { id: 'bing', name: '必应', url: 'https://www.bing.com/search?q=', favicon: 'https://icons.duckduckgo.com/ip3/www.bing.com.ico' },
   { id: 'ddgs', name: 'DuckDuckGo', url: 'https://duckduckgo.com/?q=', favicon: 'https://icons.duckduckgo.com/ip3/duckduckgo.com.ico' },
+  { id: 'youtube', name: 'YouTube', url: 'https://www.youtube.com/results?search_query=', favicon: 'https://icons.duckduckgo.com/ip3/www.youtube.com.ico' },
   { id: 'bilibili', name: 'B站', url: 'https://search.bilibili.com/all?keyword=', favicon: 'https://icons.duckduckgo.com/ip3/www.bilibili.com.ico' },
+  { id: 'xhsh', name: '小红书', url: 'https://www.xiaohongshu.com/search_result?keyword=', favicon: 'https://icons.duckduckgo.com/ip3/www.xiaohongshu.com.ico' },
+  { id: 'reddit', name: 'Reddit', url: 'https://www.reddit.com/search/?q=', favicon: 'https://icons.duckduckgo.com/ip3/www.reddit.com.ico' },
   { id: 'zhihu', name: '知乎', url: 'https://www.zhihu.com/search?type=content&q=', favicon: 'https://icons.duckduckgo.com/ip3/www.zhihu.com.ico' },
+  { id: 'twix', name: 'X', url: 'https://twitter.com/search?q=', favicon: 'https://icons.duckduckgo.com/ip3/twitter.com.ico' },
   { id: 'weibo', name: '微博', url: 'https://s.weibo.com/weibo?q=', favicon: 'https://icons.duckduckgo.com/ip3/weibo.com.ico' },
   { id: 'baidu', name: '百度', url: 'https://www.baidu.com/s?wd=', favicon: 'https://icons.duckduckgo.com/ip3/www.baidu.com.ico' },
 ];
