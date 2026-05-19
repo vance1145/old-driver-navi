@@ -246,7 +246,7 @@ a { color: inherit; text-decoration: none; }
   color: var(--accent);
   font-size: 13px;
 }
-.search-results-header.show { display: block; }
+.search-results-header.show { display: block; text-align: center; }
 
 /* ── Compact Category Grid ── */
 .cat-grid {
