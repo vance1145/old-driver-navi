@@ -85,5 +85,22 @@ const Category = {
         App.showAddLinkModal(addBtn.dataset.category);
       }
     });
+
+    document.querySelector('.content').addEventListener('wheel', (e) => {
+      const body = e.target.closest('.cat-body');
+      if (!body) return;
+
+      const { scrollTop, scrollHeight, clientHeight } = body;
+      if (scrollHeight <= clientHeight) return;
+
+      const atTop = scrollTop <= 0;
+      const atBottom = scrollTop + clientHeight >= scrollHeight - 1;
+      const delta = e.deltaY;
+
+      if ((delta < 0 && atTop) || (delta > 0 && atBottom)) return;
+
+      e.preventDefault();
+      body.scrollTop += delta;
+    }, { passive: false, capture: true });
   }
 };
