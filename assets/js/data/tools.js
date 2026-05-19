@@ -12,7 +12,6 @@ NAV_DATA.categories.push({
     { title: "Draw.io", url: "https://app.diagrams.net/", desc: "开源在线流程图｜思维导图/UML 无限制", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly9hcHAuZGlhZ3JhbXMubmV0Lw==" },
     { title: "草料二维码", url: "https://cli.im/", desc: "二维码/条形码在线生成与解析", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly9jbGkuaW0=" },
     { title: "iconfont", url: "https://www.iconfont.cn/", desc: "阿里矢量图标库｜海量图标免费下载", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly93d3cuaWNvbmZvbnQuY24v" },
-    { title: "虫部落快搜", url: "https://search.chongbuluo.com/", desc: "超强聚合搜索引擎｜一站搜全网", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly9zZWFyY2guY2hvbmdidWx1by5jb20=" },
     { title: "regex101", url: "https://regex101.com/", desc: "正则表达式在线测试与调试", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly9yZWdleDEwMS5jb20v" },
     { title: "JSON.cn", url: "https://www.json.cn/", desc: "JSON 在线解析/格式化/校验", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly93d3cuanNvbi5jbi8=" },
     { title: "OCR Space", url: "https://ocr.space/", desc: "免费在线文字识别｜支持多语言", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly9vY3Iuc3BhY2U=" },
