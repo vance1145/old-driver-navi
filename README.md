@@ -1,6 +1,6 @@
 # 🚗 老司机导航
 
-> 开箱即用的分类导航页，支持自定义收藏和导入导出
+> 开箱即用的极简美观导航页，支持自定义收藏和导入导出
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
@@ -13,12 +13,11 @@
 - 📌 **自定义链接** — 添加/编辑/删除个人收藏，支持导入/导出，存储于浏览器本地
 - 🌓 **深色模式** — 跟随系统或手动切换，偏好自动保存
 - 📱 **响应式布局** — 桌面 4 列到手机单列，自动适配各种屏幕
-- 🕐 **时钟小组件** — 顶部实时显示日期时间
-- ✅ **默认 SFW** — 日常内容安全，`?mode=nsfw` 可解锁额外分类（需年龄确认）
+- ✅ **默认 SFW** — 日常内容安全，`?mode=nsfw` 可解锁额外分类（小朋友不要看哦，需要确认年龄）
 
 ## 本地运行
 
-无依赖，直接浏览器打开 `index.html`，或用任意静态服务器：
+直接浏览器打开 `index.html`，或用任意静态服务器：
 
 ```bash
 npx serve .
@@ -26,11 +25,11 @@ npx serve .
 
 在线访问：<https://vance1145.github.io/old-driver-navi/>
 
-## 技术栈
+## 本地开发
 
-纯静态 HTML + CSS + JavaScript，零依赖，零构建工具。
+项目是纯静态页面，无需构建工具，修改代码后刷新浏览器即可预览。
 
-## 架构
+### 项目结构
 
 ```
 index.html
@@ -49,7 +48,7 @@ assets/
     app.js                     # App.init() 入口
 ```
 
-## 添加分类
+### 添加分类
 
 在 `assets/js/data/` 下新建 `.js` 文件：
 
@@ -66,6 +65,18 @@ NAV_DATA.categories.push({
 
 然后在 `index.html` 的 `<body>` 中按顺序添加对应的 `<script>` 标签。
 
-## 存储
-
 所有用户数据存储在 `localStorage`，key 统一以 `navi-` 为前缀。
+
+## 贡献
+
+欢迎提交 Issue 和 Pull Request！
+
+1. Fork 本项目
+2. 创建你的特性分支 (`git checkout -b feature/AmazingFeature`)
+3. 提交你的修改 (`git commit -m 'Add some AmazingFeature'`)
+4. 推送到分支 (`git push origin feature/AmazingFeature`)
+5. 打开一个 Pull Request
+
+---
+
+⭐ 如果这个项目对你有帮助，欢迎给个 Star！
