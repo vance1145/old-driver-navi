@@ -65,7 +65,12 @@ const Header = {
             </svg>
             老司机导航
           </a>
-          <span class="hp-toggle" id="hpToggle" title="设为主页">🏠</span>
+          <span class="hp-toggle" id="hpToggle" title="设为主页">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 12L12 3l9 9"/>
+              <path d="M5 10v9a1 1 0 001 1h3v-5h6v5h3a1 1 0 001-1v-9"/>
+            </svg>
+          </span>
           <div class="search-area">
             <div class="search-box">
               <input class="search-input" id="searchInput" type="text" placeholder="搜索站点..." autocomplete="off" autofocus>
