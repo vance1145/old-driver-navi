@@ -15,7 +15,7 @@ NAV_DATA.categories.push({
     { title: "Coze", url: "https://www.coze.com", desc: "字节跳动｜AI Bot 应用构建平台", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly93d3cuY296ZS5jb20=" },
     { title: "文心一言", url: "https://yiyan.baidu.com", desc: "百度｜中文搜索生态深度整合", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly95aXlhbi5iYWlkdS5jb20=" },
     { title: "智谱清言", url: "https://chatglm.cn", desc: "智谱 AI｜GLM 模型，国产顶尖开源", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly9jaGF0Z2xtLmNu" },
-    { title: "讯飞星火", url: "https://xinghuo.xfyun.cn", desc: "科大讯飞｜中文语音 AI 领军者", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly94aW5naHVvLnhmeXVuLmNu" },
+    { title: "讯飞星火", url: "https://xinghuo.xfyun.cn/desk", desc: "科大讯飞｜中文语音 AI 领军者", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly94aW5naHVvLnhmeXVuLmNu" },
     { title: "腾讯元宝", url: "https://yuanbao.tencent.com", desc: "腾讯｜微信生态场景深度融合", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly95dWFuYmFvLnRlbmNlbnQuY29t" },
     { title: "HuggingChat", url: "https://huggingface.co/chat", desc: "Hugging Face｜开源模型大本营", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly9odWdnaW5nZmFjZS5jby9jaGF0" },
     { title: "Character.AI", url: "https://character.ai", desc: "角色扮演｜与 AI 角色自由对话", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly9jaGFyYWN0ZXIuYWk=" },
