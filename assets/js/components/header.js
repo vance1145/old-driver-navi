@@ -53,18 +53,25 @@ const Header = {
     return `
       <header class="header">
         <div class="header-inner">
-          <a class="header-logo" href="#">
-            <svg viewBox="0 0 32 32" fill="none">
-              <rect x="3" y="13" width="27" height="12" rx="3" fill="var(--accent)"/>
-              <rect x="9" y="8" width="14" height="6" rx="2" fill="var(--accent)" opacity="0.55"/>
-              <circle cx="9" cy="25" r="4.5" fill="var(--text)"/>
-              <circle cx="9" cy="25" r="2.5" fill="var(--bg)"/>
-              <circle cx="23" cy="25" r="4.5" fill="var(--text)"/>
-              <circle cx="23" cy="25" r="2.5" fill="var(--bg)"/>
-              <rect x="12" y="18" width="8" height="2" rx="1" fill="var(--bg)" opacity=".7"/>
-            </svg>
-            老司机导航
-          </a>
+          <div style="display:flex;align-items:center;gap:2px;flex-shrink:0">
+            <a class="header-logo" href="#">
+              <svg viewBox="0 0 32 32" fill="none">
+                <rect x="3" y="13" width="27" height="12" rx="3" fill="var(--accent)"/>
+                <rect x="9" y="8" width="14" height="6" rx="2" fill="var(--accent)" opacity="0.55"/>
+                <circle cx="9" cy="25" r="4.5" fill="var(--text)"/>
+                <circle cx="9" cy="25" r="2.5" fill="var(--bg)"/>
+                <circle cx="23" cy="25" r="4.5" fill="var(--text)"/>
+                <circle cx="23" cy="25" r="2.5" fill="var(--bg)"/>
+                <rect x="12" y="18" width="8" height="2" rx="1" fill="var(--bg)" opacity=".7"/>
+              </svg>
+              老司机导航
+            </a>
+            <span class="hp-toggle" id="hpToggle" title="设为主页">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+                <path d="M8 1L1 7h2v7h4v-4h2v4h4V7h2L8 1z"/>
+              </svg>
+            </span>
+          </div>
           <div class="search-area">
             <div class="search-box">
               <input class="search-input" id="searchInput" type="text" placeholder="搜索站点..." autocomplete="off" autofocus>
@@ -112,6 +119,20 @@ const Header = {
     const themeToggle = document.getElementById('themeToggle');
     themeToggle.addEventListener('click', () => { Theme.toggle(); this.updateThemeIcon(); });
     this.updateThemeIcon();
+
+    const hpToggle = document.getElementById('hpToggle');
+    if (localStorage.getItem('navi-homepage') === 'true') hpToggle.classList.add('on');
+    hpToggle.addEventListener('click', () => {
+      if (localStorage.getItem('navi-homepage') === 'true') {
+        localStorage.removeItem('navi-homepage');
+        hpToggle.classList.remove('on');
+        App.showToast('已取消首页设置');
+      } else {
+        localStorage.setItem('navi-homepage', 'true');
+        hpToggle.classList.add('on');
+        App.showToast('请在浏览器设置中手动将本页设为主页');
+      }
+    });
 
     document.getElementById('engineBtn').addEventListener('click', () => {
       const dd = document.getElementById('engineDropdown');
