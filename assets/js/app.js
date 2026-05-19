@@ -199,10 +199,9 @@ const App = {
     overlay.id = 'homepageGuideModal';
     overlay.innerHTML = `
       <div class="modal" style="max-width:460px">
-        <h3 class="modal-title">🏠 设为浏览器启动页</h3>
+        <h3 class="modal-title">🏠 设为浏览器启动页 / 主页</h3>
         <div style="font-size:13px;line-height:1.7;color:var(--text-secondary)">
-          <p style="margin-bottom:10px">请手动将本页设为浏览器启动页：</p>
-
+          <p style="margin-bottom:10px;font-weight:600;color:var(--text)">启动页（打开浏览器时自动打开）</p>
           <div style="padding:10px 12px;background:var(--accent-bg);border-radius:8px">
             <strong style="color:var(--text)">Chrome / Edge</strong>
             <ol style="margin:6px 0 0 18px;padding:0">
@@ -213,7 +212,18 @@ const App = {
             </ol>
           </div>
 
-          <p style="margin-top:10px;font-size:12px;color:var(--text-muted)">其他浏览器操作类似，不会就去搜索</p>
+          <p style="margin:14px 0 10px;font-weight:600;color:var(--text)">主页（点击浏览器主页按钮时打开）</p>
+          <div style="padding:10px 12px;background:var(--accent-bg);border-radius:8px">
+            <strong style="color:var(--text)">Chrome / Edge</strong>
+            <ol style="margin:6px 0 0 18px;padding:0">
+              <li>右上角菜单 → <strong>设置</strong></li>
+              <li>左侧 <strong>外观</strong> → 开启 <strong>显示主页按钮</strong></li>
+              <li>选择 <strong>输入自定义网址</strong>，粘贴：</li>
+              <li><code style="background:var(--bg);padding:2px 8px;border-radius:4px;font-size:12px;word-break:break-all">${window.location.href}</code></li>
+            </ol>
+          </div>
+
+          <p style="margin-top:10px;font-size:12px;color:var(--text-muted)">其他浏览器操作类似，也可以搜索一下试试</p>
         </div>
         <div class="modal-actions">
           <button class="modal-btn primary" onclick="this.closest('.modal-overlay').remove()">知道了</button>
