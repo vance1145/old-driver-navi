@@ -51,6 +51,7 @@ const Header = {
             </svg>
             老司机导航
           </a>
+          <span class="hp-toggle" id="hpToggle" title="设为主页">🏠</span>
           <div class="search-area">
             <div class="search-box">
               <input class="search-input" id="searchInput" type="text" placeholder="搜索站点..." autocomplete="off" autofocus>
@@ -87,6 +88,22 @@ const Header = {
       this.updateThemeIcon();
     });
     this.updateThemeIcon();
+
+    const hpToggle = document.getElementById('hpToggle');
+    const homeKey = 'navi-homepage';
+    if (localStorage.getItem(homeKey) === 'true') hpToggle.classList.add('on');
+    hpToggle.addEventListener('click', () => {
+      const isSet = localStorage.getItem(homeKey) === 'true';
+      if (isSet) {
+        localStorage.removeItem(homeKey);
+        hpToggle.classList.remove('on');
+        App.showToast('已取消首页设置');
+      } else {
+        localStorage.setItem(homeKey, 'true');
+        hpToggle.classList.add('on');
+        App.showToast('请在浏览器设置中手动将本页设为主页');
+      }
+    });
 
     document.getElementById('engineSelect').addEventListener('change', (e) => {
       currentEngine = engineById(e.target.value);

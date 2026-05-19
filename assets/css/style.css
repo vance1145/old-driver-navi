@@ -92,6 +92,17 @@ a { color: inherit; text-decoration: none; }
   width: 26px;
   height: 26px;
 }
+.hp-toggle {
+  font-size: 16px;
+  cursor: pointer;
+  flex-shrink: 0;
+  opacity: 0.35;
+  transition: opacity 0.2s;
+  line-height: 1;
+  padding: 4px 0;
+}
+.hp-toggle:hover { opacity: 0.8; }
+.hp-toggle.on { opacity: 0.8; }
 .search-area {
   position: absolute;
   left: 50%;
