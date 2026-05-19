@@ -203,6 +203,8 @@ const App = {
     const existing = document.getElementById('homepageGuideModal');
     if (existing) existing.remove();
 
+    const cleanUrl = window.location.href.split('#')[0];
+
     const overlay = document.createElement('div');
     overlay.className = 'modal-overlay show';
     overlay.id = 'homepageGuideModal';
@@ -217,7 +219,7 @@ const App = {
               <li>右上角菜单 → <strong>设置</strong></li>
               <li>左侧 <strong>启动时</strong> → <strong>打开特定网页</strong></li>
               <li>点击 <strong>添加新网页</strong>，粘贴：</li>
-              <li><code style="background:var(--bg);padding:2px 8px;border-radius:4px;font-size:12px;word-break:break-all">${window.location.href}</code></li>
+              <li><code style="background:var(--bg);padding:2px 8px;border-radius:4px;font-size:12px;word-break:break-all">${cleanUrl}</code></li>
             </ol>
           </div>
 
@@ -225,10 +227,9 @@ const App = {
           <div style="padding:10px 12px;background:var(--accent-bg);border-radius:8px">
             <strong style="color:var(--text)">Chrome / Edge</strong>
             <ol style="margin:6px 0 0 18px;padding:0">
-              <li>右上角菜单 → <strong>设置</strong></li>
               <li>左侧 <strong>外观</strong> → 开启 <strong>显示主页按钮</strong></li>
               <li>选择 <strong>输入自定义网址</strong>，粘贴：</li>
-              <li><code style="background:var(--bg);padding:2px 8px;border-radius:4px;font-size:12px;word-break:break-all">${window.location.href}</code></li>
+              <li><code style="background:var(--bg);padding:2px 8px;border-radius:4px;font-size:12px;word-break:break-all">${cleanUrl}</code></li>
             </ol>
           </div>
 
@@ -241,6 +242,38 @@ const App = {
     `;
     document.body.appendChild(overlay);
     overlay.addEventListener('click', (e) => { if (e.target === overlay) overlay.remove(); });
+  },
+
+  showImportExportModal() {
+    const existing = document.getElementById('importExportModal');
+    if (existing) existing.remove();
+
+    const data = Storage.exportData();
+    const jsonStr = JSON.stringify(data, null, 2);
+
+    const overlay = document.createElement('div');
+    overlay.className = 'modal-overlay show';
+    overlay.id = 'importExportModal';
+    overlay.innerHTML = `
+      <div class="modal" style="max-width:480px">
+        <h3 class="modal-title">📥 导入/导出书签</h3>
+        <div class="modal-field">
+          <label class="modal-label">导出数据（复制保存）</label>
+          <textarea class="modal-input" id="exportData" style="height:140px;resize:vertical;font-family:monospace;font-size:12px" readonly>${jsonStr}</textarea>
+        </div>
+        <div class="modal-field">
+          <label class="modal-label">导入数据（粘贴后点击导入）</label>
+          <textarea class="modal-input" id="importData" style="height:100px;resize:vertical;font-family:monospace;font-size:12px" placeholder="在此粘贴导出的JSON数据..."></textarea>
+        </div>
+        <div class="modal-actions">
+          <button class="modal-btn" onclick="this.closest('.modal-overlay').remove()">关闭</button>
+          <button class="modal-btn primary" onclick="App.doImport()">导入</button>
+        </div>
+      </div>
+    `;
+    document.body.appendChild(overlay);
+    overlay.addEventListener('click', (e) => { if (e.target === overlay) overlay.remove(); });
+    document.getElementById('exportData').addEventListener('click', () => document.getElementById('exportData').select());
   },
 
   checkNsfwParam() {
@@ -285,6 +318,20 @@ const App = {
       overlay.remove();
       this.renderContent();
     });
+  },
+
+  doImport() {
+    const text = document.getElementById('importData').value.trim();
+    if (!text) { this.showToast('请粘贴要导入的数据'); return; }
+    try {
+      const data = JSON.parse(text);
+      Storage.importData(data);
+      this.showToast('数据导入成功');
+      document.getElementById('importExportModal').remove();
+      this.renderContent();
+    } catch {
+      this.showToast('数据格式错误，请检查');
+    }
   }
 };
 
