@@ -1,5 +1,5 @@
 NAV_DATA.categories.push({
-  id: "tools", name: "实用工具", icon: "", compact: true, maxHeight: 240, links: [
+  id: "tools", name: "实用工具", icon: "", links: [
     { title: "TinyPNG", url: "https://tinypng.com/", desc: "在线图片压缩｜智能有损压缩 PNG/JPEG", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly90aW55cG5nLmNvbQ==" },
     { title: "PDF24 Tools", url: "https://tools.pdf24.org/zh/", desc: "完全免费的 PDF 全能工具箱", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly90b29scy5wZGYyNC5vcmc=" },
     { title: "DeepL 翻译", url: "https://www.deepl.com/translator", desc: "AI 翻译标杆｜比谷歌翻译更自然", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly93d3cuZGVlcGwuY29t" },

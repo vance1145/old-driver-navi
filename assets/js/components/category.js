@@ -1,7 +1,7 @@
 const Category = {
   render(category, index) {
     return `
-      <div class="cat-container" id="category-${category.id}" data-category="${category.id}"${category.compact ? ' data-compact' : ''} style="animation: fadeInScale 0.3s ease ${index * 0.04}s both;">
+      <div class="cat-container" id="category-${category.id}" data-category="${category.id}" style="animation: fadeInScale 0.3s ease ${index * 0.04}s both;">
         <div class="cat-header">
           <span class="cat-icon">${category.icon}</span>
           <span class="cat-title">${category.name}</span>
@@ -44,7 +44,7 @@ const Category = {
     }
 
     return results.map((cat, i) => `
-      <div class="cat-container"${cat.compact ? ' data-compact' : ''} style="animation: fadeInScale 0.25s ease ${i * 0.04}s both;">
+      <div class="cat-container" style="animation: fadeInScale 0.25s ease ${i * 0.04}s both;">
         <div class="cat-header">
           <span class="cat-icon">${cat.icon}</span>
           <span class="cat-title">${cat.name}</span>
