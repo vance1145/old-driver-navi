@@ -4,18 +4,17 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-
-<https://vance1145.github.io/old-driver-navi/>
-
 ![预览](assets/images/preview.png)
 
-## 功能
+## 特性
 
-- 🔍 **一框两用** — 输入实时搜索站内所有链接的标题和描述；回车跳转搜索引擎（支持 Google/必应/DuckDuckGo/B站等）
+- 🔍 **一框两用** — 输入实时搜索站内所有链接的标题和描述；回车跳转搜索引擎
+- 🔄 **多引擎切换** — 搜索框旁可切换 Google/必应/B站/知乎等 11 个搜索引擎
 - 📌 **自定义链接** — 添加/编辑/删除个人收藏，支持导入/导出，存储于浏览器本地
 - 🌓 **深色模式** — 跟随系统或手动切换，偏好自动保存
+- 📱 **响应式布局** — 桌面 4 列到手机单列，自动适配各种屏幕
 - 🕐 **时钟小组件** — 顶部实时显示日期时间
-- ✅ **默认 SFW** — 日常使用无需担心内容不适；URL 追加 `?mode=nsfw` 可解锁额外分类（需年龄确认）
+- ✅ **默认 SFW** — 日常内容安全，`?mode=nsfw` 可解锁额外分类（需年龄确认）
 
 ## 本地运行
 
@@ -24,6 +23,8 @@
 ```bash
 npx serve .
 ```
+
+在线访问：<https://vance1145.github.io/old-driver-navi/>
 
 ## 技术栈
 
