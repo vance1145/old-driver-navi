@@ -1,23 +1,14 @@
-const MAX_VISIBLE = 10;
-
 const Category = {
   render(category, index) {
-    const links = category.links;
-    const showSeeAll = links.length > MAX_VISIBLE;
-    const visible = showSeeAll ? links.slice(0, MAX_VISIBLE) : links;
-
     return `
       <div class="cat-container" id="category-${category.id}" data-category="${category.id}" style="animation: fadeInScale 0.3s ease ${index * 0.04}s both;">
         <div class="cat-header">
           <span class="cat-icon">${category.icon}</span>
           <span class="cat-title">${category.name}</span>
-          <span class="cat-count">${links.length}</span>
+          <span class="cat-count">${category.links.length}</span>
         </div>
         <div class="cat-body" id="catBody-${category.id}">
-          ${visible.map((link, i) => LinkCard.render(link, category.id, i)).join('')}
-        </div>
-        <div class="cl-see-all ${showSeeAll ? '' : 'hidden'}" data-category="${category.id}">
-          查看全部 ${links.length} 个 <span style="font-size:10px">▸</span>
+          ${category.links.map((link, i) => LinkCard.render(link, category.id, i)).join('')}
         </div>
       </div>
     `;
@@ -68,18 +59,6 @@ const Category = {
 
   init() {
     document.querySelector('.content').addEventListener('click', (e) => {
-      const seeAll = e.target.closest('.cl-see-all');
-      if (seeAll) {
-        const catId = seeAll.dataset.category;
-        const body = document.getElementById(`catBody-${catId}`);
-        const category = NAV_DATA.categories.find(c => c.id === catId);
-        if (body && category) {
-          body.innerHTML = category.links.map((link, i) => LinkCard.render(link, catId, i)).join('');
-          seeAll.classList.add('hidden');
-        }
-        return;
-      }
-
       const addBtn = e.target.closest('.cl-add');
       if (addBtn) {
         App.showAddLinkModal(addBtn.dataset.category);
