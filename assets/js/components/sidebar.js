@@ -49,18 +49,18 @@ const Sidebar = {
 
   open() {
     document.getElementById('drawerOverlay').classList.add('show');
-    document.getElementById('drawer').classList.add('open');
+    document.getElementById('drawerContainer').classList.add('open');
     document.body.style.overflow = 'hidden';
   },
 
   close() {
     document.getElementById('drawerOverlay').classList.remove('show');
-    document.getElementById('drawer').classList.remove('open');
+    document.getElementById('drawerContainer').classList.remove('open');
     document.body.style.overflow = '';
   },
 
   toggle() {
-    if (document.getElementById('drawer').classList.contains('open')) {
+    if (document.getElementById('drawerContainer').classList.contains('open')) {
       this.close();
     } else {
       this.open();
