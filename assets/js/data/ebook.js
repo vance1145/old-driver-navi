@@ -8,9 +8,9 @@ NAV_DATA.categories.push({
     { title: "计算机免费书籍", url: "https://www.jb51.net/books/", desc: "编程开发免费电子书", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly93d3cuamI1MS5uZXQvYm9va3Mv" },
     { title: "PDF之家", url: "https://pdfzj.com/", desc: "PDF 电子书资源分享", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly9wZGZ6ai5jb20v" },
     { title: "读书小站", url: "https://ibooks.org.cn/", desc: "电子书下载｜EPUB/MOBI/PDF", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly9pYm9va3Mub3JnLmNuLw==" },
+    { title: "恩京的书房", url: "https://www.enjing.net/", desc: "电子书下载｜EPUB 精排", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly93d3cuZW5qaW5nLm5ldC8=" },
     { title: "SoBooks", url: "https://sobooks.cc/", desc: "免费电子书｜资源多/格式全", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly9zb2Jvb2tzLmNjLw==" },
     { title: "苦瓜书盘", url: "https://kgbook.com/", desc: "免费电子书｜免登录直接下载", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly9rZ2Jvb2suY29tLw==" },
-    { title: "豆瓣阅读", url: "https://read.douban.com/", desc: "豆瓣出品｜自出版/原创小说", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly9yZWFkLmRvdWJhbi5jb20v" },
     { title: "书格", url: "https://www.shuge.org/", desc: "在线古籍图书馆｜高清扫描本", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly93d3cuc2h1Z2Uub3JnLw==" },
   ]
 });
