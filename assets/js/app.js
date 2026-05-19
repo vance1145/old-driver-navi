@@ -84,8 +84,7 @@ const App = {
           <div class="empty-state-icon">🔍</div>
           <div class="empty-state-text">未找到与 "<strong>${trimmed}</strong>" 相关的站点</div>
         </div>`;
-      header.classList.add('show');
-      header.innerHTML = `搜索 "<strong>${trimmed}</strong>" 未找到匹配站点`;
+      header.classList.remove('show');
       return;
     }
 
