@@ -27,15 +27,6 @@ const App = {
         ${customSection}
         ${allCategories}
       </div>
-      ${this.renderFooter()}
-    `;
-  },
-
-  renderFooter() {
-    return `
-      <footer class="footer">
-        <a href="#" onclick="App.showImportExportModal();return false">📥 导入/导出书签</a>
-      </footer>
     `;
   },
 
