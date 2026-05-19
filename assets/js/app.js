@@ -4,6 +4,8 @@ const App = {
     this.renderLayout();
     Header.init();
     Sidebar.init();
+    Category.init();
+    LinkCard.init();
     Widgets.initClock();
     this.initBackToTop();
     this.initModal();
