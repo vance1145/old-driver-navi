@@ -19,5 +19,7 @@ NAV_DATA.categories.push({
     { title: "xHamster", url: "https://xhamster.com/", desc: "用户量大｜免费+付费混合模式", icon: "" },
     { title: "hanime1", url: "https://hanime1.me/", desc: "动漫成人内容｜二次元向", icon: "" },
     { title: "jable.tv", url: "https://jable.tv/", desc: "日本 AV 在线｜高清无码，更新及时", icon: "" },
+    { title: "JavLib", url: "https://www.javlib.com/", desc: "AV 番号检索｜作品信息查询", icon: "" },
+    { title: "JavBus", url: "https://www.javbus.com/", desc: "AV 资源索引｜磁链/字幕下载", icon: "" },
   ]
 });
