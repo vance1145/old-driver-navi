@@ -190,6 +190,58 @@ const App = {
     toast._hide = setTimeout(() => toast.classList.remove('show'), 2000);
   },
 
+  showHomepageGuide() {
+    const existing = document.getElementById('homepageGuideModal');
+    if (existing) existing.remove();
+
+    const overlay = document.createElement('div');
+    overlay.className = 'modal-overlay show';
+    overlay.id = 'homepageGuideModal';
+    overlay.innerHTML = `
+      <div class="modal" style="max-width:500px">
+        <h3 class="modal-title">🏠 设为浏览器主页</h3>
+        <div style="font-size:13px;line-height:1.7;color:var(--text-secondary)">
+          <p style="margin-bottom:12px">已将本页标记为首页。JS 无法自动修改浏览器设置，请按以下步骤手动操作：</p>
+
+          <div style="margin-bottom:10px;padding:10px 12px;background:var(--accent-bg);border-radius:8px">
+            <strong style="color:var(--text)">Google Chrome / Microsoft Edge</strong>
+            <ol style="margin:6px 0 0 18px;padding:0">
+              <li>点击右上角 <strong>⋮</strong>（菜单）</li>
+              <li>选择 <strong>设置</strong></li>
+              <li>左侧点击 <strong>启动时</strong></li>
+              <li>选择 <strong>打开特定网页</strong> → <strong>添加新网页</strong></li>
+              <li>粘贴本页地址：<code style="background:var(--bg);padding:1px 6px;border-radius:4px;font-size:12px">${window.location.href}</code></li>
+            </ol>
+          </div>
+
+          <div style="margin-bottom:10px;padding:10px 12px;background:var(--accent-bg);border-radius:8px">
+            <strong style="color:var(--text)">Firefox</strong>
+            <ol style="margin:6px 0 0 18px;padding:0">
+              <li>点击右上角 <strong>☰</strong>（菜单）</li>
+              <li>选择 <strong>设置</strong></li>
+              <li>在 <strong>主页</strong> 旁点击 <strong>恢复默认</strong> 旁的按钮</li>
+              <li>选择 <strong>自定义网址</strong> 并粘贴本页地址</li>
+            </ol>
+          </div>
+
+          <div style="padding:10px 12px;background:var(--accent-bg);border-radius:8px">
+            <strong style="color:var(--text)">Safari</strong>
+            <ol style="margin:6px 0 0 18px;padding:0">
+              <li>菜单栏点击 <strong>Safari</strong> → <strong>设置</strong></li>
+              <li>在 <strong>通用</strong> 标签页找到 <strong>主页</strong></li>
+              <li>输入本页地址并确保「新窗口打开方式」设为「主页」</li>
+            </ol>
+          </div>
+        </div>
+        <div class="modal-actions">
+          <button class="modal-btn primary" onclick="this.closest('.modal-overlay').remove()">知道了</button>
+        </div>
+      </div>
+    `;
+    document.body.appendChild(overlay);
+    overlay.addEventListener('click', (e) => { if (e.target === overlay) overlay.remove(); });
+  },
+
   showImportExportModal() {
     const existing = document.getElementById('importExportModal');
     if (existing) existing.remove();

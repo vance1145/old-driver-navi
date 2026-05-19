@@ -123,15 +123,9 @@ const Header = {
     const hpToggle = document.getElementById('hpToggle');
     if (localStorage.getItem('navi-homepage') === 'true') hpToggle.classList.add('on');
     hpToggle.addEventListener('click', () => {
-      if (localStorage.getItem('navi-homepage') === 'true') {
-        localStorage.removeItem('navi-homepage');
-        hpToggle.classList.remove('on');
-        App.showToast('已取消首页设置');
-      } else {
-        localStorage.setItem('navi-homepage', 'true');
-        hpToggle.classList.add('on');
-        App.showToast('请在浏览器设置中手动将本页设为主页');
-      }
+      localStorage.setItem('navi-homepage', 'true');
+      hpToggle.classList.add('on');
+      App.showHomepageGuide();
     });
 
     document.getElementById('engineBtn').addEventListener('click', () => {
