@@ -541,5 +541,6 @@ a { color: inherit; text-decoration: none; }
 }
 @media (max-width: 480px) {
   .cat-grid { grid-template-columns: 1fr; }
-  .cl-desc { max-width: none; }
+  .cl-title,
+  .cl-desc { flex: 1; min-width: 0; }
 }
