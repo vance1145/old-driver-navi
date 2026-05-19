@@ -9,5 +9,6 @@ NAV_DATA.categories.push({
     { title: "萌番组", url: "https://bangumi.moe/", desc: "动漫 BT 种子下载｜追番索引", icon: "" },
     { title: "蜜柑计划", url: "https://mikanani.me/", desc: "RSS 追番工具｜自动订阅下载新番", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly9taWthbmFuaS5tZS8=" },
     { title: "动漫花园", url: "https://share.dmhy.org/", desc: "动漫资源 BT 分享｜追番下载必备", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly9zaGFyZS5kbWh5Lm9yZy8=" },
+    { title: "MyAnimeList", url: "https://myanimelist.net/", desc: "全球最大动漫数据库｜评分/排行/追番记录", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly9teWFuaW1lbGlzdC5uZXQv" },
   ]
 });
