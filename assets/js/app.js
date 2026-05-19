@@ -79,11 +79,6 @@ const App = {
     }
 
     if (results.length === 0) {
-      container.innerHTML = `
-        <div class="empty-state">
-          <div class="empty-state-icon">🔍</div>
-          <div class="empty-state-text">未找到与 "<strong>${trimmed}</strong>" 相关的站点</div>
-        </div>`;
       header.classList.add('show');
       header.innerHTML = `搜索 "<strong>${trimmed}</strong>" 未找到匹配站点`;
       return;
