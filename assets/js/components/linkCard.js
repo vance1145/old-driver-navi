@@ -26,11 +26,13 @@ const LinkCard = {
         <div class="link-info">
           <div class="link-title">${link.title}</div>
           <div class="link-desc">${link.desc || ''}</div>
-          ${hasReview ? `
-            <div class="link-review">${link.review}</div>
-            <button class="link-review-toggle">展开 <span class="arrow">▸</span></button>
-          ` : ''}
         </div>
+        ${hasReview ? `
+        <div class="link-review-area">
+          <span class="review-icon">🔍</span>
+          <div class="review-tooltip">${link.review}</div>
+        </div>
+        ` : ''}
         <div class="link-card-actions">
           ${isCustom ? `
             <button class="link-action-btn edit-link" data-link-id="${id}" title="编辑">✎</button>
@@ -53,16 +55,7 @@ const LinkCard = {
 
   init() {
     document.querySelector('.content').addEventListener('click', (e) => {
-      const toggleBtn = e.target.closest('.link-review-toggle');
-      if (toggleBtn) {
-        e.stopPropagation();
-        const review = toggleBtn.parentElement.querySelector('.link-review');
-        const expanded = review.classList.toggle('expanded');
-        toggleBtn.innerHTML = expanded
-          ? '收起 <span class="arrow">▾</span>'
-          : '展开 <span class="arrow">▸</span>';
-        return;
-      }
+      if (e.target.closest('.link-review-area')) return;
 
       const editBtn = e.target.closest('.edit-link');
       if (editBtn) {

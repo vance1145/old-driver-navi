@@ -425,44 +425,59 @@ a {
   text-overflow: ellipsis;
 }
 
-.link-review {
-  font-size: 12px;
-  color: var(--text-secondary);
-  line-height: 1.6;
-  margin-top: 6px;
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.3s ease, opacity 0.25s ease;
-  opacity: 0;
-}
-
-.link-review.expanded {
-  max-height: 300px;
-  opacity: 1;
-}
-
-.link-review-toggle {
-  display: inline-flex;
+.link-review-area {
+  position: relative;
+  flex-shrink: 0;
+  display: flex;
   align-items: center;
-  gap: 2px;
-  margin-top: 4px;
-  padding: 0;
-  border: none;
-  background: none;
-  color: var(--accent);
-  font-size: 12px;
+  z-index: 5;
+}
+
+.review-icon {
+  font-size: 16px;
   cursor: pointer;
-  opacity: 0.6;
+  opacity: 0;
   transition: opacity 0.2s;
+  padding: 4px;
+  border-radius: 6px;
 }
 
-.link-review-toggle:hover {
+.link-card:hover .review-icon {
+  opacity: 0.4;
+}
+
+.review-icon:hover {
+  opacity: 1 !important;
+  background: var(--accent-bg);
+}
+
+.review-tooltip {
+  position: absolute;
+  right: -4px;
+  top: calc(100% + 8px);
+  width: 280px;
+  background: var(--bg-card);
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
+  padding: 14px;
+  font-size: 13px;
+  line-height: 1.7;
+  color: var(--text);
+  box-shadow: var(--shadow-hover);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  z-index: 30;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s, transform 0.2s;
+  transform: translateY(-4px);
+}
+
+.review-icon:hover + .review-tooltip,
+.review-tooltip:hover {
   opacity: 1;
-}
-
-.link-review-toggle .arrow {
-  font-size: 10px;
-  transition: transform 0.2s;
+  pointer-events: auto;
+  transform: translateY(0);
 }
 
 .link-card-actions {
