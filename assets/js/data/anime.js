@@ -2,9 +2,6 @@ NAV_DATA.categories.push({
   id: "anime", name: "动漫", icon: "", links: [
     { title: "AGE 动漫", url: "https://www.age.tv/", desc: "在线动漫站｜高清新番/经典动画", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly93d3cuYWdlLnR2Lw==" },
     { title: "Omofun", url: "https://www.mxfuns.com/", desc: "免费动漫在线看｜更新快速", icon: "" },
-    { title: "樱花动漫", url: "https://www.yhdm.tv/", desc: "老牌在线动漫站｜番剧齐全", icon: "" },
-    { title: "风车动漫", url: "https://www.fengche.tv/", desc: "在线动漫观看｜高清画质", icon: "" },
-    { title: "ZzzFun", url: "https://www.zzzfun.com/", desc: "免费动漫在线｜无广告体验好", icon: "" },
     { title: "动漫岛", url: "https://www.dmdm.tv/", desc: "动漫在线观看｜日漫/国漫", icon: "" },
     { title: "巴哈姆特动画疯", url: "https://ani.gamer.com.tw/", desc: "台湾正版动漫｜免费部分+付费解锁", icon: "" },
     { title: "AniWatch", url: "https://aniwatch.to/", desc: "英文｜免费动漫在线｜界面现代", icon: "" },
