@@ -313,11 +313,6 @@ a { color: inherit; text-decoration: none; }
   padding: 0 10px 0 8px;
   gap: 4px;
 }
-[data-compact] .cl-num { width: 16px; font-size: 10px; }
-[data-compact] .cl-icon { width: 14px; height: 14px; }
-[data-compact] .cl-icon-fallback { width: 14px; height: 14px; font-size: 8px; }
-[data-compact] .cl-title { font-size: 12px; }
-[data-compact] .cl-desc { font-size: 10px; }
 
 .cl-num {
   width: 18px;
