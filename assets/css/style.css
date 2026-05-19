@@ -92,17 +92,6 @@ a { color: inherit; text-decoration: none; }
   width: 26px;
   height: 26px;
 }
-.hp-toggle {
-  display: inline-flex;
-  align-items: center;
-  cursor: pointer;
-  color: var(--text-muted);
-  padding: 4px;
-  border-radius: 6px;
-  transition: all 0.2s;
-}
-.hp-toggle:hover { color: var(--accent); background: var(--accent-bg); }
-.hp-toggle.on { color: var(--accent); }
 .search-area {
   position: absolute;
   left: 50%;
