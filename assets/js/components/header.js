@@ -1,13 +1,38 @@
 const SEARCH_ENGINES = [
   { id: 'bing', name: '必应', url: 'https://www.bing.com/search?q=' },
-  { id: 'baidu', name: '百度', url: 'https://www.baidu.com/s?wd=' },
   { id: 'google', name: 'Google', url: 'https://www.google.com/search?q=' },
+  { id: 'ddgs', name: 'DuckDuckGo', url: 'https://duckduckgo.com/?q=' },
   { id: 'zhihu', name: '知乎', url: 'https://www.zhihu.com/search?type=content&q=' },
   { id: 'bilibili', name: 'B站', url: 'https://search.bilibili.com/all?keyword=' },
   { id: 'weibo', name: '微博', url: 'https://s.weibo.com/weibo?q=' },
+  { id: 'baidu', name: '百度', url: 'https://www.baidu.com/s?wd=' },
 ];
 
-let currentEngine = SEARCH_ENGINES[0];
+const engineById = (id) => SEARCH_ENGINES.find(e => e.id === id) || SEARCH_ENGINES[0];
+
+function resolveDefaultEngine() {
+  const cached = sessionStorage.getItem('navi-default-engine');
+  if (cached) return engineById(cached);
+  return engineById('bing');
+}
+
+let currentEngine = resolveDefaultEngine();
+
+async function detectNetworkAndUpdate() {
+  if (sessionStorage.getItem('navi-default-engine')) return;
+  try {
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(), 2000);
+    await fetch('https://www.google.com/favicon.ico', { mode: 'no-cors', signal: controller.signal });
+    clearTimeout(timer);
+    sessionStorage.setItem('navi-default-engine', 'google');
+    currentEngine = engineById('google');
+    const sel = document.getElementById('engineSelect');
+    if (sel) sel.value = 'google';
+  } catch {
+    sessionStorage.setItem('navi-default-engine', 'bing');
+  }
+}
 
 const Header = {
   render() {
@@ -49,7 +74,7 @@ const Header = {
     this.updateThemeIcon();
 
     document.getElementById('engineSelect').addEventListener('change', (e) => {
-      currentEngine = SEARCH_ENGINES.find(eng => eng.id === e.target.value) || SEARCH_ENGINES[0];
+      currentEngine = engineById(e.target.value);
       document.getElementById('searchInput').focus();
     });
 
@@ -88,6 +113,8 @@ const Header = {
         App.clearSearch();
       }
     });
+
+    detectNetworkAndUpdate();
   },
 
   updateThemeIcon() {
