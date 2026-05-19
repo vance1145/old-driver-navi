@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Navi - 精选互联网资源导航，发现好用的网站和工具">
+  <meta name="theme-color" content="#4f6ef7">
+  <title>Navi - 互联网资源导航</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧭</text></svg>">
+</head>
+<body>
+  <div class="container">
+    <aside class="sidebar"></aside>
+    <div class="main">
+      <div class="header-placeholder"></div>
+      <div class="content"></div>
+      <button class="back-to-top" id="backToTop" aria-label="回到顶部">↑</button>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="addLinkModal">
+    <div class="modal">
+      <h3 class="modal-title" id="modalTitle">添加链接</h3>
+      <div class="modal-field">
+        <label class="modal-label">标题</label>
+        <input class="modal-input" id="linkTitle" type="text" placeholder="输入网站名称" autocomplete="off">
+      </div>
+      <div class="modal-field">
+        <label class="modal-label">链接</label>
+        <input class="modal-input" id="linkUrl" type="url" placeholder="https://example.com" autocomplete="off">
+      </div>
+      <div class="modal-field">
+        <label class="modal-label">描述（可选）</label>
+        <input class="modal-input" id="linkDesc" type="text" placeholder="一句话描述这个网站" autocomplete="off">
+      </div>
+      <div class="modal-actions">
+        <button class="modal-btn" id="modalCancel">取消</button>
+        <button class="modal-btn primary" id="modalConfirm">确认</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/utils/theme.js"></script>
+  <script src="assets/js/utils/storage.js"></script>
+  <script src="assets/js/utils/search.js"></script>
+  <script src="assets/js/components/widgets.js"></script>
+  <script src="assets/js/components/header.js"></script>
+  <script src="assets/js/components/sidebar.js"></script>
+  <script src="assets/js/components/linkCard.js"></script>
+  <script src="assets/js/components/category.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
