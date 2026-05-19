@@ -74,7 +74,6 @@ const LinkCard = {
       const categoryId = item.dataset.category;
       const link = this.findLink(linkId, categoryId);
       if (link && link.url) {
-        Storage.recordClick(linkId);
         window.open(link.url, '_blank');
       }
     });

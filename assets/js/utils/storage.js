@@ -28,20 +28,6 @@ const Storage = {
     this.set('custom-links', links);
   },
 
-  getClickCounts() {
-    return this.get('click-counts', {});
-  },
-
-  saveClickCounts(counts) {
-    this.set('click-counts', counts);
-  },
-
-  recordClick(linkId) {
-    const counts = this.getClickCounts();
-    counts[linkId] = (counts[linkId] || 0) + 1;
-    this.saveClickCounts(counts);
-  },
-
   exportData() {
     return {
       customLinks: this.getCustomLinks(),
