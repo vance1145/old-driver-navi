@@ -41,12 +41,13 @@ const Header = {
         <div class="header-inner">
           <a class="header-logo" href="#">
             <svg viewBox="0 0 32 32" fill="none">
-              <rect x="2" y="12" width="28" height="12" rx="3" fill="currentColor" opacity="0.15"/>
-              <rect x="9" y="7" width="14" height="7" rx="2" fill="currentColor" opacity="0.3"/>
-              <circle cx="9" cy="24" r="4.5" fill="#333"/>
-              <circle cx="9" cy="24" r="2.5" fill="#fff"/>
-              <circle cx="23" cy="24" r="4.5" fill="#333"/>
-              <circle cx="23" cy="24" r="2.5" fill="#fff"/>
+              <rect x="3" y="13" width="27" height="12" rx="3" fill="var(--accent)"/>
+              <rect x="9" y="8" width="14" height="6" rx="2" fill="var(--accent)" opacity="0.55"/>
+              <circle cx="9" cy="25" r="4.5" fill="var(--text)"/>
+              <circle cx="9" cy="25" r="2.5" fill="var(--bg)"/>
+              <circle cx="23" cy="25" r="4.5" fill="var(--text)"/>
+              <circle cx="23" cy="25" r="2.5" fill="var(--bg)"/>
+              <rect x="12" y="18" width="8" height="2" rx="1" fill="var(--bg)" opacity=".7"/>
             </svg>
             老司机导航
           </a>
