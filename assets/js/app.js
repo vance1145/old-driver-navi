@@ -3,7 +3,6 @@ const App = {
     Theme.init();
     this.renderLayout();
     Header.init();
-    Sidebar.init();
     Category.init();
     LinkCard.init();
     Widgets.initClock();
@@ -12,7 +11,6 @@ const App = {
   },
 
   renderLayout() {
-    document.getElementById('drawerContainer').innerHTML = Sidebar.render();
     document.querySelector('.header-placeholder').innerHTML = Header.render();
     this.renderContent();
   },

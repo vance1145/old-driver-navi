@@ -39,18 +39,28 @@ const Header = {
     return `
       <header class="header">
         <div class="header-inner">
-          <button class="hamburger" id="hamburgerBtn" aria-label="打开菜单">☰</button>
+          <a class="header-logo" href="#">
+            <svg viewBox="0 0 32 32" fill="none">
+              <rect x="2" y="12" width="28" height="12" rx="3" fill="currentColor" opacity="0.15"/>
+              <rect x="9" y="7" width="14" height="7" rx="2" fill="currentColor" opacity="0.3"/>
+              <circle cx="9" cy="24" r="4.5" fill="#333"/>
+              <circle cx="9" cy="24" r="2.5" fill="#fff"/>
+              <circle cx="23" cy="24" r="4.5" fill="#333"/>
+              <circle cx="23" cy="24" r="2.5" fill="#fff"/>
+            </svg>
+            老司机导航
+          </a>
           <div class="search-area">
+            <div class="search-box">
+              <input class="search-input" id="searchInput" type="text" placeholder="搜索站点..." autocomplete="off">
+              <button class="search-btn" id="searchBtn">搜索</button>
+            </div>
             <div class="engine-select">
               <select id="engineSelect">
                 ${SEARCH_ENGINES.map(eng => `
                   <option value="${eng.id}"${eng.id === currentEngine.id ? ' selected' : ''}>${eng.name}</option>
                 `).join('')}
               </select>
-            </div>
-            <div class="search-box">
-              <input class="search-input" id="searchInput" type="text" placeholder="搜索站点或输入关键词搜索全网..." autocomplete="off">
-              <button class="search-btn" id="searchBtn">搜索</button>
             </div>
           </div>
           <div class="header-actions">
@@ -66,8 +76,6 @@ const Header = {
   },
 
   init() {
-    document.getElementById('hamburgerBtn').addEventListener('click', () => Sidebar.toggle());
-
     const themeToggle = document.getElementById('themeToggle');
     themeToggle.addEventListener('click', () => {
       Theme.toggle();
@@ -112,7 +120,6 @@ const Header = {
       if (e.key === 'Escape') {
         searchInput.blur();
         App.clearSearch();
-        Sidebar.close();
       }
     });
 
