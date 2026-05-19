@@ -16,6 +16,7 @@ const LinkCard = {
     const id = linkId || `${categoryId}-${link.title.replace(/\s+/g, '-')}`;
     const iconUrl = toFaviconUrl(link.icon);
     const showImg = Boolean(iconUrl);
+    const hasReview = Boolean(link.review);
     return `
       <div class="link-card" data-link-id="${id}" data-category="${categoryId}" draggable="false">
         <div style="position:relative;width:36px;height:36px;flex-shrink:0">
@@ -25,6 +26,10 @@ const LinkCard = {
         <div class="link-info">
           <div class="link-title">${link.title}</div>
           <div class="link-desc">${link.desc || ''}</div>
+          ${hasReview ? `
+            <div class="link-review">${link.review}</div>
+            <button class="link-review-toggle">展开 <span class="arrow">▸</span></button>
+          ` : ''}
         </div>
         <div class="link-card-actions">
           ${isCustom ? `
@@ -48,6 +53,17 @@ const LinkCard = {
 
   init() {
     document.querySelector('.content').addEventListener('click', (e) => {
+      const toggleBtn = e.target.closest('.link-review-toggle');
+      if (toggleBtn) {
+        e.stopPropagation();
+        const review = toggleBtn.parentElement.querySelector('.link-review');
+        const expanded = review.classList.toggle('expanded');
+        toggleBtn.innerHTML = expanded
+          ? '收起 <span class="arrow">▾</span>'
+          : '展开 <span class="arrow">▸</span>';
+        return;
+      }
+
       const editBtn = e.target.closest('.edit-link');
       if (editBtn) {
         e.stopPropagation();

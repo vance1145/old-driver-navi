@@ -3,11 +3,14 @@ const Sidebar = {
     return `
       <div class="sidebar-logo">
         <svg class="sidebar-logo-icon" viewBox="0 0 32 32" fill="none">
-          <rect width="32" height="32" rx="8" fill="currentColor" opacity="0.15"/>
-          <path d="M16 6C14 6 8 10 8 18C8 22 12 26 16 26C20 26 24 22 24 18C24 10 18 6 16 6Z" stroke="currentColor" stroke-width="2" fill="none"/>
-          <circle cx="16" cy="18" r="3" fill="currentColor"/>
+          <rect x="2" y="12" width="28" height="12" rx="3" fill="currentColor" opacity="0.15"/>
+          <rect x="9" y="7" width="14" height="7" rx="2" fill="currentColor" opacity="0.3"/>
+          <circle cx="9" cy="24" r="4.5" fill="#333"/>
+          <circle cx="9" cy="24" r="2.5" fill="#fff"/>
+          <circle cx="23" cy="24" r="4.5" fill="#333"/>
+          <circle cx="23" cy="24" r="2.5" fill="#fff"/>
         </svg>
-        导航
+        老司机导航
       </div>
       <ul class="nav-list" id="navList">
         ${NAV_DATA.categories.map((cat, i) => `
@@ -51,11 +54,14 @@ const Sidebar = {
         <div class="mobile-sidebar-header">
           <div class="sidebar-logo" style="border:none;margin:0;padding:0;">
             <svg class="sidebar-logo-icon" viewBox="0 0 32 32" fill="none">
-              <rect width="32" height="32" rx="8" fill="currentColor" opacity="0.15"/>
-              <path d="M16 6C14 6 8 10 8 18C8 22 12 26 16 26C20 26 24 22 24 18C24 10 18 6 16 6Z" stroke="currentColor" stroke-width="2" fill="none"/>
-              <circle cx="16" cy="18" r="3" fill="currentColor"/>
+              <rect x="2" y="12" width="28" height="12" rx="3" fill="currentColor" opacity="0.15"/>
+              <rect x="9" y="7" width="14" height="7" rx="2" fill="currentColor" opacity="0.3"/>
+              <circle cx="9" cy="24" r="4.5" fill="#333"/>
+              <circle cx="9" cy="24" r="2.5" fill="#fff"/>
+              <circle cx="23" cy="24" r="4.5" fill="#333"/>
+              <circle cx="23" cy="24" r="2.5" fill="#fff"/>
             </svg>
-            导航
+            老司机导航
           </div>
           <button class="mobile-sidebar-close" id="mobileSidebarClose">✕</button>
         </div>
