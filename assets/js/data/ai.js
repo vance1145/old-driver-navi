@@ -8,7 +8,7 @@ NAV_DATA.categories.push({
     { title: "Perplexity", url: "https://www.perplexity.ai", desc: "答案引擎｜每条回答附带来源引用", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly93d3cucGVycGxleGl0eS5haQ==" },
     { title: "豆包", url: "https://www.doubao.com", desc: "字节跳动｜中文最受欢迎的免费 AI 助手", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly93d3cuZG91YmFvLmNvbQ==" },
     { title: "Kimi", url: "https://kimi.moonshot.cn", desc: "月之暗面｜200 万字超长上下文处理", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly9raW1pLm1vb25zaG90LmNu" },
-    { title: "通义千问", url: "https://www.qianwen.com", desc: "阿里巴巴｜最强中文开源模型系列", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly93d3cucWlhbnZlbi5jb20=" },
+    { title: "通义千问", url: "https://www.qianwen.com", desc: "阿里巴巴｜最强中文开源模型系列", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly90b25neWkuYWxpeXVuLmNvbQ==" },
     { title: "Meta AI", url: "https://www.meta.ai", desc: "Meta｜Llama 模型，整合 Facebook/Instagram", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly93d3cubWV0YS5haQ==" },
     { title: "Mistral Le Chat", url: "https://chat.mistral.ai", desc: "Mistral AI｜法国开源模型，欧洲最强", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly9jaGF0Lm1pc3RyYWwuYWk=" },
     { title: "文心一言", url: "https://yiyan.baidu.com", desc: "百度｜中文搜索生态深度整合", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly95aXlhbi5iYWlkdS5jb20=" },
