@@ -32,6 +32,11 @@ const App = {
   },
 
   searchLinks(query) {
+    if (!this._contentHeight) {
+      this._contentHeight = document.querySelector('.content').offsetHeight;
+      document.querySelector('.content').style.minHeight = this._contentHeight + 'px';
+    }
+
     const header = document.getElementById('searchResultsHeader');
     const container = document.getElementById('categoryContainer');
 
@@ -90,6 +95,9 @@ const App = {
   },
 
   clearSearch() {
+    document.querySelector('.content').style.minHeight = '';
+    this._contentHeight = null;
+
     const header = document.getElementById('searchResultsHeader');
     header.classList.remove('show');
     header.innerHTML = '';
