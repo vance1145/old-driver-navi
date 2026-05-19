@@ -11,6 +11,43 @@ function toFaviconUrl(icon) {
   return icon;
 }
 
+let tooltipEl = null;
+let tooltipTimer = null;
+
+function getTooltip() {
+  if (!tooltipEl) {
+    tooltipEl = document.createElement('div');
+    tooltipEl.className = 'global-tooltip';
+    document.body.appendChild(tooltipEl);
+  }
+  return tooltipEl;
+}
+
+function hideTooltip() {
+  clearTimeout(tooltipTimer);
+  if (tooltipEl) tooltipEl.classList.remove('show');
+}
+
+function showTooltip(item) {
+  const review = item.dataset.review;
+  if (!review) return;
+
+  const tooltip = getTooltip();
+  clearTimeout(tooltipTimer);
+  tooltipTimer = setTimeout(() => {
+    const rect = item.getBoundingClientRect();
+    tooltip.textContent = review;
+    tooltip.style.maxWidth = Math.min(320, Math.max(200, rect.width + 40)) + 'px';
+
+    tooltip.style.left = rect.left + 'px';
+    let top = rect.top - 10 - tooltip.offsetHeight;
+    if (top < 6) top = rect.bottom + 10;
+    tooltip.style.top = top + 'px';
+
+    tooltip.classList.add('show');
+  }, 1000);
+}
+
 const LinkCard = {
   render(link, categoryId, index, isCustom = false, linkId = null) {
     const id = linkId || `${categoryId}-${link.title.replace(/\s+/g, '-')}`;
@@ -18,7 +55,7 @@ const LinkCard = {
     const showImg = Boolean(iconUrl);
     const hasReview = Boolean(link.review);
     return `
-      <div class="cl-item" data-link-id="${id}" data-category="${categoryId}" draggable="false">
+      <div class="cl-item" data-link-id="${id}" data-category="${categoryId}"${hasReview ? ` data-review="${link.review.replace(/"/g, '&quot;')}"` : ''} draggable="false">
         <span class="cl-num">${index + 1}</span>
         ${showImg
           ? `<img class="cl-icon" src="${iconUrl}" alt="" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
@@ -27,11 +64,6 @@ const LinkCard = {
         }
         <span class="cl-title">${link.title}</span>
         <span class="cl-desc">${link.desc || ''}</span>
-        ${hasReview ? `
-        <div class="cl-review-wrap">
-          <span class="cl-review-icon">🔍</span>
-          <div class="cl-review-tip">${link.review}</div>
-        </div>` : ''}
         ${isCustom ? `
         <div class="cl-actions">
           <button class="cl-act edit-link" data-link-id="${id}" title="编辑">✎</button>
@@ -52,7 +84,6 @@ const LinkCard = {
 
   init() {
     document.querySelector('.content').addEventListener('click', (e) => {
-      if (e.target.closest('.cl-review-wrap')) return;
       if (e.target.closest('.cl-actions')) return;
 
       const editBtn = e.target.closest('.edit-link');
@@ -86,5 +117,20 @@ const LinkCard = {
         window.open(link.url, '_blank');
       }
     });
+
+    document.querySelector('.content').addEventListener('mouseover', (e) => {
+      const item = e.target.closest('.cl-item');
+      if (!item) { hideTooltip(); return; }
+      showTooltip(item);
+    }, { passive: true });
+
+    document.querySelector('.content').addEventListener('mouseout', (e) => {
+      const item = e.target.closest('.cl-item');
+      if (!item) { hideTooltip(); return; }
+      if (item.contains(e.relatedTarget)) return;
+      hideTooltip();
+    }, { passive: true });
+
+    window.addEventListener('scroll', hideTooltip, { passive: true });
   }
 };
