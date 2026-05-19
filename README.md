@@ -1,6 +1,6 @@
 # 🚗 老司机导航
 
-> 开箱即用的极简美观导航页，支持自定义收藏和导入导出
+> 开箱即用的极简美观导航网站，支持自定义收藏和导入导出
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
