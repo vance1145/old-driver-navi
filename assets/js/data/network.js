@@ -14,14 +14,5 @@ NAV_DATA.categories.push({
     { title: "GoodbyeDPI", url: "https://github.com/ValdikSS/GoodbyeDPI", desc: "Windows DPI 绕过｜修改 TCP 参数突破封锁", icon: "" },
     { title: "Zapret", url: "https://github.com/bol-van/zapret", desc: "Linux/OpenWrt DPI 绕过｜包分片+TOS 操作", icon: "" },
     { title: "Netch", url: "https://github.com/netchx/netch", desc: "游戏代理工具｜虚拟网卡+进程级路由", icon: "" },
-    { title: "Just My Socks", url: "https://justmysocks.net/", desc: "搬瓦工旗下｜老牌 Shadowsocks 服务，稳定靠谱", icon: "" },
-    { title: "CNIX", url: "https://www.cnix.cc/", desc: "中继专线｜多地区接入，SS/SSR/V2Ray", icon: "" },
-    { title: "rixCloud", url: "https://rixcloud.me/", desc: "高品质节点｜IEPL 专线，流媒体解锁", icon: "" },
-    { title: "TAG", url: "https://tagss.pro/", desc: "老牌机场｜SS 协议，稳定运营多年", icon: "" },
-    { title: "N3RO", url: "https://n3ro.io/", desc: "多协议支持｜IEPL/IPLC 专线集群", icon: "" },
-    { title: "FlowerCloud", url: "https://flowercloud.xyz/", desc: "大流量套餐｜SS/V2Ray 协议支持", icon: "" },
-    { title: "KuroCloud", url: "https://kurocloud.cc/", desc: "高防IP｜SS+Trojan 协议，流媒体全解锁", icon: "" },
-    { title: "FastLink", url: "https://fastlink.life/", desc: "中转机场｜阿里云内网+落地优选", icon: "" },
-    { title: "MegaCloud", url: "https://megacloud.me/", desc: "IEPL 专线网络｜全路由优化", icon: "" },
   ]
 });
