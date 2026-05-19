@@ -5,7 +5,6 @@ const App = {
     Header.init();
     Category.init();
     LinkCard.init();
-    Widgets.initClock();
     this.initBackToTop();
     this.initModal();
     this.checkNsfwParam();
