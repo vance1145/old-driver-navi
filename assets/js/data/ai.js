@@ -18,5 +18,7 @@ NAV_DATA.categories.push({
     { title: "HuggingChat", url: "https://huggingface.co/chat", desc: "Hugging Face｜开源模型大本营", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly9odWdnaW5nZmFjZS5jby9jaGF0" },
     { title: "Character.AI", url: "https://character.ai", desc: "角色扮演｜与 AI 角色自由对话", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly9jaGFyYWN0ZXIuYWk=" },
     { title: "百川智能", url: "https://www.baichuan-ai.com", desc: "百川｜搜狗创始人出品，中文模型新秀", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly93d3cuYmFpY2h1YW4tYWkuY29t" },
+    { title: "Pi", url: "https://pi.ai", desc: "Inflection AI｜温暖亲切的个人 AI 助手", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly9waS5haQ==" },
+    { title: "天工AI", url: "https://www.tiangong.cn", desc: "昆仑万维｜AI 搜索+对话+办公一体化", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly93d3cudGlhbmdvbmcuY24=" },
   ]
 });
