@@ -289,9 +289,9 @@ const App = {
     overlay.innerHTML = `
       <div class="age-gate-box">
         <div class="age-gate-icon">🔞</div>
-        <h2 class="age-gate-title">成人内容警告</h2>
+        <h2 class="age-gate-title">内容警告</h2>
         <p class="age-gate-text">
-          本分类包含成人内容，<strong>未满 18 周岁请立即离开</strong>。
+          以下分类包含受限内容，<strong>未满 18 周岁或所在地区不允许浏览此类内容者请立即离开</strong>。
         </p>
         <p class="age-gate-text" style="font-size:13px;color:var(--text-muted);margin-top:8px;">
           点击下方按钮即代表你已年满 18 周岁，并愿意浏览此类内容。
