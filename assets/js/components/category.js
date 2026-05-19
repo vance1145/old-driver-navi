@@ -1,40 +1,44 @@
+const MAX_VISIBLE = 10;
+
 const Category = {
   render(category, index) {
+    const links = category.links;
+    const showSeeAll = links.length > MAX_VISIBLE;
+    const visible = showSeeAll ? links.slice(0, MAX_VISIBLE) : links;
+
     return `
-      <section class="category-section" id="category-${category.id}" data-category="${category.id}" style="animation: fadeIn 0.4s ease ${index * 0.05}s both;">
-        <div class="category-header">
-          <span class="category-icon">${category.icon}</span>
-          <h2 class="category-title">${category.name}</h2>
-          <span style="margin-left:auto;font-size:12px;color:var(--text-muted)">${category.links.length} 个站点</span>
+      <div class="cat-container" id="category-${category.id}" data-category="${category.id}" style="animation: fadeInScale 0.3s ease ${index * 0.04}s both;">
+        <div class="cat-header">
+          <span class="cat-icon">${category.icon}</span>
+          <span class="cat-title">${category.name}</span>
+          <span class="cat-count">${links.length}</span>
         </div>
-        <div class="links-grid" data-category="${category.id}">
-          ${category.links.map(link => LinkCard.render(link, category.id)).join('')}
-          <div class="add-link-card" data-category="${category.id}">
-            <span>+</span> 添加链接
-          </div>
+        <div class="cat-body" id="catBody-${category.id}">
+          ${visible.map((link, i) => LinkCard.render(link, category.id, i)).join('')}
         </div>
-      </section>
+        <div class="cl-see-all ${showSeeAll ? '' : 'hidden'}" data-category="${category.id}">
+          查看全部 ${links.length} 个 <span style="font-size:10px">▸</span>
+        </div>
+      </div>
     `;
   },
 
   renderCustomLinks() {
-    const customLinks = Storage.getCustomLinks();
-    if (customLinks.length === 0) return '';
+    const links = Storage.getCustomLinks();
+    if (links.length === 0) return '';
 
     return `
-      <section class="category-section" id="category-custom" data-category="custom">
-        <div class="category-header">
-          <span class="category-icon">📌</span>
-          <h2 class="category-title">我的收藏</h2>
-          <span style="margin-left:auto;font-size:12px;color:var(--text-muted)">${customLinks.length} 个站点</span>
+      <div class="cat-container" id="category-custom" data-category="custom" style="animation: fadeInScale 0.3s ease 0s both;">
+        <div class="cat-header">
+          <span class="cat-icon">📌</span>
+          <span class="cat-title">我的收藏</span>
+          <span class="cat-count">${links.length}</span>
         </div>
-        <div class="links-grid" data-category="custom">
-          ${customLinks.map(link => LinkCard.render(link, 'custom', true, link.id)).join('')}
-          <div class="add-link-card" data-category="custom">
-            <span>+</span> 添加链接
-          </div>
+        <div class="cat-body" id="catBody-custom">
+          ${links.map((link, i) => LinkCard.render(link, 'custom', i, true, link.id)).join('')}
         </div>
-      </section>
+        <div class="cl-add" data-category="custom"><span>+</span> 添加链接</div>
+      </div>
     `;
   },
 
@@ -49,25 +53,37 @@ const Category = {
     }
 
     return results.map((cat, i) => `
-      <section class="category-section" style="animation: fadeIn 0.3s ease ${i * 0.05}s both;">
-        <div class="category-header">
-          <span class="category-icon">${cat.icon}</span>
-          <h2 class="category-title">${cat.name}</h2>
-          <span style="margin-left:auto;font-size:12px;color:var(--text-muted)">${cat.links.length} 个匹配</span>
+      <div class="cat-container" style="animation: fadeInScale 0.25s ease ${i * 0.04}s both;">
+        <div class="cat-header">
+          <span class="cat-icon">${cat.icon}</span>
+          <span class="cat-title">${cat.name}</span>
+          <span class="cat-count">${cat.links.length} 个匹配</span>
         </div>
-        <div class="links-grid">
-          ${cat.links.map(link => LinkCard.render(link, cat.id)).join('')}
+        <div class="cat-body">
+          ${cat.links.map((link, j) => LinkCard.render(link, cat.id, j)).join('')}
         </div>
-      </section>
+      </div>
     `).join('');
   },
 
   init() {
     document.querySelector('.content').addEventListener('click', (e) => {
-      const addBtn = e.target.closest('.add-link-card');
-      if (!addBtn) return;
-      const category = addBtn.dataset.category;
-      App.showAddLinkModal(category);
+      const seeAll = e.target.closest('.cl-see-all');
+      if (seeAll) {
+        const catId = seeAll.dataset.category;
+        const body = document.getElementById(`catBody-${catId}`);
+        const category = NAV_DATA.categories.find(c => c.id === catId);
+        if (body && category) {
+          body.innerHTML = category.links.map((link, i) => LinkCard.render(link, catId, i)).join('');
+          seeAll.classList.add('hidden');
+        }
+        return;
+      }
+
+      const addBtn = e.target.closest('.cl-add');
+      if (addBtn) {
+        App.showAddLinkModal(addBtn.dataset.category);
+      }
     });
   }
 };

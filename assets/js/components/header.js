@@ -39,7 +39,7 @@ const Header = {
     return `
       <header class="header">
         <div class="header-inner">
-          <button class="mobile-sidebar-toggle" id="mobileSidebarToggle" aria-label="打开菜单">☰</button>
+          <button class="hamburger" id="hamburgerBtn" aria-label="打开菜单">☰</button>
           <div class="search-area">
             <div class="engine-select">
               <select id="engineSelect">
@@ -66,6 +66,8 @@ const Header = {
   },
 
   init() {
+    document.getElementById('hamburgerBtn').addEventListener('click', () => Sidebar.toggle());
+
     const themeToggle = document.getElementById('themeToggle');
     themeToggle.addEventListener('click', () => {
       Theme.toggle();
@@ -95,7 +97,6 @@ const Header = {
     searchInput.addEventListener('keydown', (e) => {
       if (e.key === 'Enter') doSearch();
     });
-
     searchInput.addEventListener('input', () => {
       App.searchLinks(searchInput.value);
     });
@@ -111,6 +112,7 @@ const Header = {
       if (e.key === 'Escape') {
         searchInput.blur();
         App.clearSearch();
+        Sidebar.close();
       }
     });
 
