@@ -21,7 +21,7 @@ NAV_DATA.categories.push({
     { title: "jable.tv", url: "https://jable.tv/", desc: "日本 AV 在线｜高清无码，更新及时", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly9qYWJsZS50di8=" },
     { title: "JavLib", url: "https://www.javlib.com/", desc: "AV 番号检索｜作品信息查询", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly93d3cuamF2bGliLmNvbS8=" },
     { title: "JavBus", url: "https://www.javbus.com/", desc: "AV 资源索引｜磁链/字幕下载", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly93d3cuamF2YnVzLmNvbS8=" },
-    { title: "hanime1", url: "https://hanime1.me/", desc: "中文字幕｜动漫成人内容｜二次元向", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly9oYW5pbWUxLm1lLw==" },
+    { title: "hanime1.me", url: "https://hanime1.me/", desc: "中文字幕｜动漫成人内容｜二次元向", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly9oYW5pbWUxLm1lLw==" },
     { title: "Hanime.tv", url: "https://hanime.tv/", desc: "英文字幕｜欧美向动漫 H 站｜高清每日更新", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly9oYW5pbWUudHYvaG9tZQ==" },
     { title: "HentaiHaven", url: "https://hentaihaven.xxx/", desc: "英文字幕｜经典里番/动漫成人内容库", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly9oZW50YWloYXZlbi54eHgv" },
   ]
