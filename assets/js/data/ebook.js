@@ -1,9 +1,7 @@
 NAV_DATA.categories.push({
   id: "ebook", name: "电子书", icon: "", links: [
-    { title: "GitHub", url: "https://github.com/", desc: "全球最大代码托管｜上面的电子书真的很多", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly9naXRodWIuY29tLw==" },
     { title: "Z-Library", url: "https://z-library.bz/", desc: "全球最大电子书库｜千万级资源", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly96LWxpYnJhcnkuYnov" },
     { title: "Project Gutenberg", url: "https://www.gutenberg.org/", desc: "全球最大免费电子书库｜6 万+ 经典", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly93d3cuZ3V0ZW5iZXJnLm9yZy8=" },
-    { title: "微信读书", url: "https://weread.qq.com/", desc: "微信读书｜社交化阅读体验", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly93ZXJlYWQucXEuY29tLw==" },
     { title: "图灵社区", url: "https://www.ituring.com.cn/book?tab=free", desc: "计算机书籍｜免费在线阅读", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly93d3cuaXR1cmluZy5jb20uY24vYm9vaz90YWI9ZnJlZQ==" },
     { title: "计算机免费书籍", url: "https://www.jb51.net/books/", desc: "编程开发免费电子书", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly93d3cuamI1MS5uZXQvYm9va3Mv" },
     { title: "PDF之家", url: "https://pdfzj.com/", desc: "PDF 电子书资源分享", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly9wZGZ6ai5jb20v" },
