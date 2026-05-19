@@ -45,17 +45,8 @@ const App = {
       return;
     }
 
+    const lower = query.trim().toLowerCase();
     const trimmed = query.trim();
-    if (trimmed.startsWith('/')) {
-      const searchQuery = trimmed.slice(1).trim().toLowerCase();
-      const results = Search.search(searchQuery);
-      container.innerHTML = results
-        ? Category.renderSearchResults(results, searchQuery)
-        : '<div class="empty-state"><div class="empty-state-icon">🔍</div><div class="empty-state-text">未找到匹配结果</div></div>';
-      return;
-    }
-
-    const lower = trimmed.toLowerCase();
     const results = [];
     const customLinks = Storage.getCustomLinks();
 
@@ -96,7 +87,6 @@ const App = {
     const header = document.getElementById('searchResultsHeader');
     header.classList.remove('show');
     header.innerHTML = '';
-    Search.clear();
     document.getElementById('searchInput').value = '';
     this.renderContent();
   },
