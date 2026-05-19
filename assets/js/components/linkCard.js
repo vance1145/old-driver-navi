@@ -4,10 +4,7 @@ function toFaviconUrl(icon) {
     const b64 = icon.match(/favicon\.png\.pub\/v1\/(\S+)/)?.[1];
     if (b64) {
       const url = atob(b64);
-      const host = new URL(url).hostname;
-      const parts = host.split('.');
-      const root = parts.length > 2 ? parts.slice(-2).join('.') : host;
-      return `https://icons.duckduckgo.com/ip3/${root}.ico`;
+      return `https://www.google.com/s2/favicons?domain=${new URL(url).hostname}&sz=64`;
     }
   } catch {}
   return icon;
