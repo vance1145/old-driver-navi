@@ -1,7 +1,7 @@
 const Category = {
   render(category, index) {
     return `
-      <div class="cat-container" id="category-${category.id}" data-category="${category.id}" style="animation: fadeInScale 0.3s ease ${index * 0.04}s both;">
+      <div class="cat-container" id="category-${category.id}" data-category="${category.id}"${category.compact ? ' data-compact' : ''} style="animation: fadeInScale 0.3s ease ${index * 0.04}s both;">
         <div class="cat-header">
           <span class="cat-icon">${category.icon}</span>
           <span class="cat-title">${category.name}</span>
