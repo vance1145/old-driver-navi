@@ -1,8 +1,10 @@
-# 🚗 老司机导航 (Old Driver Navi)
+# 🚗 老司机导航
 
-收藏夹一堆链接，真要用时翻半天。网上导航站要么广告满天飞，要么全是 AI 生成的低质内容，分类还死板。
+# 🚗 老司机导航
 
-老司机导航精选了百来个靠谱资源，分类清晰，支持随时收藏自己的常用链接。
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+开箱即用的分类导航页，支持自定义收藏和导入导出，默认内容安全无广。
 
 <https://vance1145.github.io/old-driver-navi/>
 
@@ -10,8 +12,8 @@
 
 ## 功能
 
-- 🔍 **一框两用** — 输入即搜站内所有链接；回车直接跳转搜索引擎（可切换 Google/必应/B站等）
-- 📌 **自定义链接** — 添加/编辑/删除个人收藏，存储于浏览器本地
+- 🔍 **一框两用** — 输入实时搜索站内所有链接的标题和描述；回车跳转搜索引擎（支持 Google/必应/DuckDuckGo/B站等）
+- 📌 **自定义链接** — 添加/编辑/删除个人收藏，支持导入/导出，存储于浏览器本地
 - 🌓 **深色模式** — 跟随系统或手动切换，偏好自动保存
 - 🕐 **时钟小组件** — 顶部实时显示日期时间
 - ✅ **默认 SFW** — 日常使用无需担心内容不适；URL 追加 `?mode=nsfw` 可解锁额外分类（需年龄确认）
@@ -41,7 +43,7 @@ npx serve .
 
 ## 技术栈
 
-纯静态 HTML + CSS + JavaScript，零依赖，零构建工具。无需 npm/pnpm/yarn。
+纯静态 HTML + CSS + JavaScript，零依赖，零构建工具。
 
 ## 架构
 
@@ -55,10 +57,9 @@ assets/
     data/adult.js              # 动态加载（?mode=nsfw）
     utils/theme.js             # 主题切换与持久化
     utils/storage.js           # localStorage 封装
-    utils/search.js            # 分类搜索
     components/widgets.js      # 时钟组件
     components/header.js       # 顶栏、搜索、搜索引擎选择
-    components/linkCard.js     # 链接条目渲染
+    components/linkCard.js     # 链接条目渲染与自定义链接操作
     components/category.js     # 分类卡片渲染
     app.js                     # App.init() 入口
 ```
