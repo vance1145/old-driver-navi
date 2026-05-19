@@ -8,6 +8,7 @@ const App = {
     Widgets.initClock();
     this.initBackToTop();
     this.initModal();
+    this.checkNsfwParam();
   },
 
   renderLayout() {
@@ -264,6 +265,50 @@ const App = {
     document.body.appendChild(overlay);
     overlay.addEventListener('click', (e) => { if (e.target === overlay) overlay.remove(); });
     document.getElementById('exportData').addEventListener('click', () => document.getElementById('exportData').select());
+  },
+
+  checkNsfwParam() {
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('mode') !== 'nsfw') return;
+
+    const script = document.createElement('script');
+    script.src = 'assets/js/data/adult.js';
+    script.onload = () => {
+      if (sessionStorage.getItem('nsfw-consent')) {
+        this.renderContent();
+      } else {
+        this.showAgeGate();
+      }
+    };
+    document.body.appendChild(script);
+  },
+
+  showAgeGate() {
+    const overlay = document.createElement('div');
+    overlay.className = 'age-gate';
+    overlay.innerHTML = `
+      <div class="age-gate-box">
+        <div class="age-gate-icon">🔞</div>
+        <h2 class="age-gate-title">成人内容警告</h2>
+        <p class="age-gate-text">
+          本分类包含成人内容，<strong>未满 18 周岁请立即离开</strong>。
+        </p>
+        <p class="age-gate-text" style="font-size:13px;color:var(--text-muted);margin-top:8px;">
+          点击下方按钮即代表你已年满 18 周岁，并愿意浏览此类内容。
+        </p>
+        <div class="age-gate-actions">
+          <button class="modal-btn" onclick="window.location.href='https://www.baidu.com'">离开</button>
+          <button class="modal-btn primary" id="ageGateConfirm">我已成年（18+），进入</button>
+        </div>
+      </div>
+    `;
+    document.body.appendChild(overlay);
+
+    overlay.querySelector('#ageGateConfirm').addEventListener('click', () => {
+      sessionStorage.setItem('nsfw-consent', 'true');
+      overlay.remove();
+      this.renderContent();
+    });
   },
 
   doImport() {
