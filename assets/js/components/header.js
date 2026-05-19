@@ -1,7 +1,7 @@
 const SEARCH_ENGINES = [
+  { id: 'bing', name: '必应', url: 'https://www.bing.com/search?q=' },
   { id: 'baidu', name: '百度', url: 'https://www.baidu.com/s?wd=' },
   { id: 'google', name: 'Google', url: 'https://www.google.com/search?q=' },
-  { id: 'bing', name: '必应', url: 'https://www.bing.com/search?q=' },
   { id: 'zhihu', name: '知乎', url: 'https://www.zhihu.com/search?type=content&q=' },
   { id: 'bilibili', name: 'B站', url: 'https://search.bilibili.com/all?keyword=' },
   { id: 'weibo', name: '微博', url: 'https://s.weibo.com/weibo?q=' },
@@ -16,10 +16,12 @@ const Header = {
         <div class="header-inner">
           <button class="mobile-sidebar-toggle" id="mobileSidebarToggle" aria-label="打开菜单">☰</button>
           <div class="search-area">
-            <div class="engine-select" id="engineSelect">
-              ${SEARCH_ENGINES.map(eng => `
-                <button class="engine-btn${eng.id === currentEngine.id ? ' active' : ''}" data-engine="${eng.id}">${eng.name}</button>
-              `).join('')}
+            <div class="engine-select">
+              <select id="engineSelect">
+                ${SEARCH_ENGINES.map(eng => `
+                  <option value="${eng.id}"${eng.id === currentEngine.id ? ' selected' : ''}>${eng.name}</option>
+                `).join('')}
+              </select>
             </div>
             <div class="search-box">
               <input class="search-input" id="searchInput" type="text" placeholder="搜索站点或输入关键词搜索全网..." autocomplete="off">
@@ -46,12 +48,8 @@ const Header = {
     });
     this.updateThemeIcon();
 
-    document.getElementById('engineSelect').addEventListener('click', (e) => {
-      const btn = e.target.closest('.engine-btn');
-      if (!btn) return;
-      document.querySelectorAll('.engine-btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      currentEngine = SEARCH_ENGINES.find(eng => eng.id === btn.dataset.engine) || SEARCH_ENGINES[0];
+    document.getElementById('engineSelect').addEventListener('change', (e) => {
+      currentEngine = SEARCH_ENGINES.find(eng => eng.id === e.target.value) || SEARCH_ENGINES[0];
       document.getElementById('searchInput').focus();
     });
 
