@@ -77,14 +77,20 @@ const Header = {
             </div>
             <div class="engine-select">
               <button class="ef-btn" id="engineBtn">
-                <img class="ef-icon" src="${currentEngine.favicon}" alt="">
+                <span style="position:relative;display:inline-flex;align-items:center">
+                  <img class="ef-icon" src="${currentEngine.favicon}" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                  <span class="ef-icon ef-icon-fb" style="display:none">${currentEngine.name.charAt(0)}</span>
+                </span>
                 <span class="ef-label">${currentEngine.name}</span>
                 <span class="ef-arrow">▾</span>
               </button>
               <div class="ef-dropdown" id="engineDropdown">
                 ${SEARCH_ENGINES.map(eng => `
                   <button class="eo${eng.id === currentEngine.id ? ' active' : ''}" data-id="${eng.id}">
-                    <img class="ef-icon" src="${eng.favicon}" alt="">
+                    <span style="position:relative;display:inline-flex;align-items:center;flex-shrink:0">
+                      <img class="ef-icon" src="${eng.favicon}" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                      <span class="ef-icon ef-icon-fb" style="display:none">${eng.name.charAt(0)}</span>
+                    </span>
                     ${eng.name}
                   </button>
                 `).join('')}
