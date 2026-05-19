@@ -1,11 +1,25 @@
+function toFaviconUrl(icon) {
+  if (!icon) return '';
+  try {
+    const b64 = icon.match(/favicon\.png\.pub\/v1\/(\S+)/)?.[1];
+    if (b64) {
+      const url = atob(b64);
+      const domain = new URL(url).hostname;
+      return `https://icons.duckduckgo.com/ip3/${domain}.ico`;
+    }
+  } catch {}
+  return icon;
+}
+
 const LinkCard = {
   render(link, categoryId, isCustom = false, linkId = null) {
     const id = linkId || `${categoryId}-${link.title.replace(/\s+/g, '-')}`;
-    const showImg = Boolean(link.icon);
+    const iconUrl = toFaviconUrl(link.icon);
+    const showImg = Boolean(iconUrl);
     return `
       <div class="link-card" data-link-id="${id}" data-category="${categoryId}" draggable="false">
         <div style="position:relative;width:36px;height:36px;flex-shrink:0">
-          ${showImg ? `<img class="link-icon" src="${link.icon}" alt="" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">` : ''}
+          ${showImg ? `<img class="link-icon" src="${iconUrl}" alt="" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">` : ''}
           <div class="link-icon fallback" style="display:${showImg ? 'none' : 'flex'}">${link.title.charAt(0)}</div>
         </div>
         <div class="link-info">
