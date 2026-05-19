@@ -1,0 +1,24 @@
+NAV_DATA.categories.push({
+  id: "tools", name: "实用工具", icon: "", links: [
+    { title: "TinyPNG", url: "https://tinypng.com/", desc: "在线图片压缩｜智能有损压缩 PNG/JPEG", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly90aW55cG5nLmNvbQ==" },
+    { title: "PDF24 Tools", url: "https://tools.pdf24.org/zh/", desc: "完全免费的 PDF 全能工具箱", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly90b29scy5wZGYyNC5vcmc=" },
+    { title: "DeepL 翻译", url: "https://www.deepl.com/translator", desc: "AI 翻译标杆｜比谷歌翻译更自然", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly93d3cuZGVlcGwuY29t" },
+    { title: "草料二维码", url: "https://cli.im/", desc: "二维码/条形码在线生成与解析", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly9jbGkuaW0=" },
+    { title: "Remove.bg", url: "https://www.remove.bg/zh", desc: "AI 一键去背景｜人像/商品图秒抠", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly93d3cucmVtb3ZlLmJn" },
+    { title: "OCR Space", url: "https://ocr.space/", desc: "免费在线文字识别｜支持多语言", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly9vY3Iuc3BhY2U=" },
+    { title: "EZGIF", url: "https://ezgif.com/", desc: "在线 GIF 制作/编辑/压缩工具", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly9lemdpZi5jb20=" },
+    { title: "虫部落快搜", url: "https://search.chongbuluo.com/", desc: "超强聚合搜索引擎｜一站搜全网", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly9zZWFyY2guY2hvbmdidWx1by5jb20=" },
+    { title: "ProcessOn", url: "https://www.processon.com/", desc: "在线思维导图/流程图/UML 设计", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly93d3cucHJvY2Vzc29uLmNvbQ==" },
+    { title: "稿定设计", url: "https://www.gaoding.com/", desc: "在线 PS + 海量设计模板素材", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly93d3cuZ2FvZGluZy5jb20=" },
+    { title: "TTSMaker", url: "https://ttsmaker.cn/", desc: "免费文字转语音｜支持多语言多音色", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly90dHNtYWtlci5jbg==" },
+    { title: "Convertio", url: "https://convertio.co/zh/", desc: "300+ 格式文件在线转换", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly9jb252ZXJ0aW8uY28=" },
+    { title: "VirusTotal", url: "https://www.virustotal.com/", desc: "多引擎在线文件/URL 安全检测", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly93d3cudmlydXN0b3RhbC5jb20=" },
+    { title: "Aconvert", url: "https://www.aconvert.com/cn/", desc: "万能文件格式转换｜文档/电子书/音视频", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly93d3cuYWNvbnZlcnQuY29t" },
+    { title: "Temp Mail", url: "https://www.moakt.com/zh", desc: "临时邮箱｜匿名收邮件，保护隐私", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly93d3cubW9ha3QuY29t" },
+    { title: "waifu2x", url: "https://waifu2x.udp.jp/", desc: "AI 图片无损放大｜动漫/插画效果极佳", icon: "https://favicon.png.pub/v1/aHR0cDovL3dhaWZ1MngudWRwLmpw" },
+    { title: "在线录屏", url: "https://toolwa.com/record/", desc: "免安装在线录屏/录像/录音", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly90b29sd2EuY29t" },
+    { title: "IT Tools", url: "https://it-tools.tech/", desc: "程序员在线工具合集｜编码/转换/计算", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly9pdC10b29scy50ZWNo" },
+    { title: "翻页时钟", url: "https://flipclocker.com/", desc: "全屏翻页时钟｜专注/展示/装饰", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly9mbGlwY2xvY2tlci5jb20=" },
+    { title: "腾讯帮小忙", url: "https://tool.browser.qq.com/", desc: "腾讯在线工具箱｜图片/PDF/文档工具", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly90b29sLmJyb3dzZXIucXEuY29t" },
+  ]
+});
