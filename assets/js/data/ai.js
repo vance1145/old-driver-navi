@@ -18,5 +18,15 @@ NAV_DATA.categories.push({
     { title: "HuggingChat", url: "https://huggingface.co/chat", desc: "Hugging Face｜开源模型大本营", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly9odWdnaW5nZmFjZS5jby9jaGF0" },
     { title: "Character.AI", url: "https://character.ai", desc: "角色扮演｜与 AI 角色自由对话", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly9jaGFyYWN0ZXIuYWk=" },
     { title: "百川智能", url: "https://www.baichuan-ai.com", desc: "百川｜搜狗创始人出品，中文模型新秀", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly93d3cuYmFpY2h1YW4tYWkuY29t" },
+    { title: "Pi", url: "https://pi.ai", desc: "Inflection AI｜温暖亲切的个人 AI 助手", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly9waS5haQ==" },
+    { title: "天工AI", url: "https://www.tiangong.cn", desc: "昆仑万维｜AI 搜索+对话+办公一体化", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly93d3cudGlhbmdvbmcuY24=" },
+    { title: "360 智脑", url: "https://chat.360.com", desc: "360｜安全大模型，搜索+对话双引擎", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly9jaGF0LjM2MC5jb20=" },
+    { title: "零一万物 Yi", url: "https://yi.chat", desc: "李开复创办｜Yi 系列开源模型新星", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly95aS5jaGF0" },
+    { title: "You.com", url: "https://you.com", desc: "AI 搜索引擎｜注重隐私的对话式搜索", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly95b3UuY29t" },
+    { title: "Cohere Coral", url: "https://coral.cohere.com", desc: "Cohere｜企业级 RAG 对话模型", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly9jb3JhbC5jb2hlcmUuY29t" },
+    { title: "阶跃星辰 StepChat", url: "https://stepchat.cn", desc: "阶跃星辰｜国内新秀，多模态能力突出", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly9zdGVwY2hhdC5jbg==" },
+    { title: "商汤日日新", url: "https://chat.sensetime.com", desc: "商汤科技｜视觉识别强项的多模态 AI", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly9jaGF0LnNlbnNldGltZS5jb20=" },
+    { title: "Replika", url: "https://replika.com", desc: "AI 陪伴聊天｜情感交互独特定位", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly9yZXBsaWthLmNvbQ==" },
+    { title: "MiniMax 海螺AI", url: "https://hailuoai.com", desc: "MiniMax｜国内头部 AI 创业公司", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly9oYWlsdW9haS5jb20=" },
   ]
 });
