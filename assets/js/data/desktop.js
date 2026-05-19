@@ -17,6 +17,7 @@ NAV_DATA.categories.push({
     { title: "HandBrake", url: "https://handbrake.fr/", desc: "视频转码工具｜格式转换/压缩一把抓", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly9oYW5kYnJha2UuZnIv" },
     { title: "Obsidian", url: "https://obsidian.md/", desc: "本地知识库笔记｜双向链接+强大插件", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly9vYnNpZGlhbi5tZC8=" },
     { title: "CrystalDiskInfo", url: "https://crystalmark.info/en/", desc: "硬盘健康检测｜SMART 状态一目了然", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly9jcnlzdGFsbWFyay5pbmZvL2VuLw==" },
+    { title: "火绒", url: "https://www.huorong.cn/", desc: "轻量免费杀毒｜无广告无捆绑，国内口碑最佳", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly93d3cuaHVvcm9uZy5jbi8=" },
     { title: "Listary", url: "https://www.listary.com/", desc: "文件快速定位｜双击 Ctrl 即刻搜索", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly93d3cubGlzdGFyeS5jb20v" },
     { title: "CPU-Z", url: "https://www.cpuid.com/", desc: "CPU/内存/主板检测｜装机验机必备", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly93d3cuY3B1aWQuY29tLw==" },
     { title: "Everything", url: "https://www.voidtools.com/", desc: "文件秒搜工具｜比 Windows 搜索快 100 倍", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly93d3cudm9pZHRvb2xzLmNvbS8=" },
