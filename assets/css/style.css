@@ -527,7 +527,8 @@ a { color: inherit; text-decoration: none; }
   .content { padding: 12px; }
   .clock-widget { display: none; }
   .cat-body { max-height: 280px; }
-  .cl-desc { max-width: 80px; }
+  .cl-title { flex: 0 1 auto; min-width: 0; }
+  .cl-desc { flex: 1; min-width: 0; }
 }
 @media (max-width: 480px) {
   .engine-select .ef-btn { width: 70px; padding: 5px 4px; font-size: 11px; }
