@@ -24,7 +24,7 @@
 npx serve .
 ```
 
-在线访问：<https://navi.old-driver.com/>
+在线访问：<https://navi.old-driver.com>
 
 ## 本地开发
 
