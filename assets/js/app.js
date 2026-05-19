@@ -235,38 +235,6 @@ const App = {
     overlay.addEventListener('click', (e) => { if (e.target === overlay) overlay.remove(); });
   },
 
-  showImportExportModal() {
-    const existing = document.getElementById('importExportModal');
-    if (existing) existing.remove();
-
-    const data = Storage.exportData();
-    const jsonStr = JSON.stringify(data, null, 2);
-
-    const overlay = document.createElement('div');
-    overlay.className = 'modal-overlay show';
-    overlay.id = 'importExportModal';
-    overlay.innerHTML = `
-      <div class="modal" style="max-width:480px">
-        <h3 class="modal-title">📥 导入/导出书签</h3>
-        <div class="modal-field">
-          <label class="modal-label">导出数据（复制保存）</label>
-          <textarea class="modal-input" id="exportData" style="height:140px;resize:vertical;font-family:monospace;font-size:12px" readonly>${jsonStr}</textarea>
-        </div>
-        <div class="modal-field">
-          <label class="modal-label">导入数据（粘贴后点击导入）</label>
-          <textarea class="modal-input" id="importData" style="height:100px;resize:vertical;font-family:monospace;font-size:12px" placeholder="在此粘贴导出的JSON数据..."></textarea>
-        </div>
-        <div class="modal-actions">
-          <button class="modal-btn" onclick="this.closest('.modal-overlay').remove()">关闭</button>
-          <button class="modal-btn primary" onclick="App.doImport()">导入</button>
-        </div>
-      </div>
-    `;
-    document.body.appendChild(overlay);
-    overlay.addEventListener('click', (e) => { if (e.target === overlay) overlay.remove(); });
-    document.getElementById('exportData').addEventListener('click', () => document.getElementById('exportData').select());
-  },
-
   checkNsfwParam() {
     const params = new URLSearchParams(window.location.search);
     if (params.get('mode') !== 'nsfw') return;
@@ -309,20 +277,6 @@ const App = {
       overlay.remove();
       this.renderContent();
     });
-  },
-
-  doImport() {
-    const text = document.getElementById('importData').value.trim();
-    if (!text) { this.showToast('请粘贴要导入的数据'); return; }
-    try {
-      const data = JSON.parse(text);
-      Storage.importData(data);
-      this.showToast('数据导入成功');
-      document.getElementById('importExportModal').remove();
-      this.renderContent();
-    } catch {
-      this.showToast('数据格式错误，请检查');
-    }
   }
 };
 

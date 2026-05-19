@@ -28,14 +28,6 @@ const Storage = {
     this.set('custom-links', links);
   },
 
-  getHiddenCategories() {
-    return this.get('hidden-categories', []);
-  },
-
-  saveHiddenCategories(cats) {
-    this.set('hidden-categories', cats);
-  },
-
   getClickCounts() {
     return this.get('click-counts', {});
   },
@@ -53,7 +45,6 @@ const Storage = {
   exportData() {
     return {
       customLinks: this.getCustomLinks(),
-      hiddenCategories: this.getHiddenCategories(),
       theme: localStorage.getItem('navi-theme') || 'light',
       exportedAt: new Date().toISOString()
     };
@@ -61,7 +52,6 @@ const Storage = {
 
   importData(data) {
     if (data.customLinks) this.saveCustomLinks(data.customLinks);
-    if (data.hiddenCategories) this.saveHiddenCategories(data.hiddenCategories);
     if (data.theme) Theme.set(data.theme);
   }
 };
