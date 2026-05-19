@@ -18,6 +18,6 @@ NAV_DATA.categories.push({
     { title: "XVideos", url: "https://www.xvideos.com/", desc: "流量最高的成人视频站｜更新极快", icon: "" },
     { title: "xHamster", url: "https://xhamster.com/", desc: "用户量大｜免费+付费混合模式", icon: "" },
     { title: "hanime1", url: "https://hanime1.me/", desc: "动漫成人内容｜二次元向", icon: "" },
-    { title: "jable.tv", url: "https://jable.tv/", desc: "日本成人视频｜高清资源", icon: "" },
+    { title: "jable.tv", url: "https://jable.tv/", desc: "日本 AV 在线｜高清无码，更新及时", icon: "" },
   ]
 });
