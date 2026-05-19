@@ -8,5 +8,7 @@ NAV_DATA.categories.push({
     { title: "Nexus Mods", url: "https://www.nexusmods.com/", desc: "全球最大游戏模组社区｜老滚/辐射/星空", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly93d3cubmV4dXNtb2RzLmNvbS8=" },
     { title: "Poki", url: "https://poki.com/zh", desc: "在线小游戏平台｜上千款免费即玩", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly9wb2tpLmNvbS8=" },
     { title: "Switch520", url: "https://www.switch520.com/", desc: "用过都说好，谢谢老区长", icon: "" },
+    { title: "鲲Gal", url: "https://www.kungal.com/", desc: "GalGame 交流社区｜游戏资源/汉化", icon: "" },
+    { title: "GGBase", url: "https://ggbases.dlgal.com/", desc: "GalGame 资源站｜汉化/硬盘版下载", icon: "" },
   ]
 });
