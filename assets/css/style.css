@@ -11,9 +11,9 @@
   --border: rgba(0, 0, 0, 0.08);
   --shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
   --shadow-hover: 0 4px 12px rgba(0, 0, 0, 0.1);
-  --accent: #4f6ef7;
-  --accent-light: #6b83f7;
-  --accent-bg: rgba(79, 110, 247, 0.08);
+  --accent: #1a1a2e;
+  --accent-light: #555;
+  --accent-bg: rgba(0, 0, 0, 0.05);
   --scrollbar: rgba(0, 0, 0, 0.1);
   --cat-header-bg: rgba(0, 0, 0, 0.02);
 }
@@ -31,9 +31,9 @@
   --border: rgba(255, 255, 255, 0.06);
   --shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
   --shadow-hover: 0 4px 12px rgba(0, 0, 0, 0.5);
-  --accent: #6b83f7;
-  --accent-light: #8a9eff;
-  --accent-bg: rgba(107, 131, 247, 0.12);
+  --accent: #e0e0f0;
+  --accent-light: #bbb;
+  --accent-bg: rgba(255, 255, 255, 0.06);
   --scrollbar: rgba(255, 255, 255, 0.08);
   --cat-header-bg: rgba(255, 255, 255, 0.03);
 }
@@ -137,7 +137,7 @@ a { color: inherit; text-decoration: none; }
 }
 .search-input:focus { border-color: var(--accent); }
 .search-btn {
-  padding: 7px 12px;
+  padding: 7px 10px;
   border: 1px solid var(--accent);
   border-radius: 0 8px 8px 0;
   background: var(--accent);
@@ -146,6 +146,9 @@ a { color: inherit; text-decoration: none; }
   cursor: pointer;
   white-space: nowrap;
   flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .search-btn:hover { background: var(--accent-light); }
 
