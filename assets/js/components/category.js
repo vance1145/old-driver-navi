@@ -7,7 +7,7 @@ const Category = {
           <span class="cat-title">${category.name}</span>
           <span class="cat-count">${category.links.length}</span>
         </div>
-        <div class="cat-body" id="catBody-${category.id}">
+        <div class="cat-body" id="catBody-${category.id}"${category.maxHeight ? ` style="max-height:${category.maxHeight}px"` : ''}>
           ${category.links.map((link, i) => LinkCard.render(link, category.id, i)).join('')}
         </div>
       </div>
