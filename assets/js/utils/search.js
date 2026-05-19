@@ -9,8 +9,7 @@ const Search = {
     for (const category of NAV_DATA.categories) {
       const matchingLinks = category.links.filter(link =>
         link.title.toLowerCase().includes(this.currentQuery) ||
-        (link.desc && link.desc.toLowerCase().includes(this.currentQuery)) ||
-        category.name.toLowerCase().includes(this.currentQuery)
+        (link.desc && link.desc.toLowerCase().includes(this.currentQuery))
       );
       if (matchingLinks.length > 0) {
         results.push({
