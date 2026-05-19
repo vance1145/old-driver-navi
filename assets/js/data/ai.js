@@ -5,7 +5,6 @@ NAV_DATA.categories.push({
     { title: "Gemini", url: "https://gemini.google.com", desc: "Google｜多模态 AI，深度整合谷歌生态", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly9nZW1pbmkuZ29vZ2xlLmNvbQ==" },
     { title: "DeepSeek", url: "https://chat.deepseek.com", desc: "深度求索｜国产开源大模型标杆", icon: "https://icons.duckduckgo.com/ip3/deepseek.com.ico" },
     { title: "Grok", url: "https://grok.com", desc: "xAI｜幽默不羁，实时接入 X 平台数据", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly9ncm9rLmNvbQ==" },
-    { title: "Microsoft Copilot", url: "https://copilot.microsoft.com", desc: "微软｜深度融入 Office 和 Windows", icon: "" },
     { title: "Perplexity", url: "https://www.perplexity.ai", desc: "答案引擎｜每条回答附带来源引用", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly93d3cucGVycGxleGl0eS5haQ==" },
     { title: "豆包", url: "https://www.doubao.com", desc: "字节跳动｜中文最受欢迎的免费 AI 助手", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly93d3cuZG91YmFvLmNvbQ==" },
     { title: "Kimi", url: "https://kimi.moonshot.cn", desc: "月之暗面｜200 万字超长上下文处理", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly9raW1pLm1vb25zaG90LmNu" },
