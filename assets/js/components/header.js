@@ -1,22 +1,15 @@
 const SEARCH_ENGINES = [
-  { id: 'bing', name: '必应', url: 'https://www.bing.com/search?q=' },
-  { id: 'google', name: 'Google', url: 'https://www.google.com/search?q=' },
-  { id: 'ddgs', name: 'DuckDuckGo', url: 'https://duckduckgo.com/?q=' },
-  { id: 'zhihu', name: '知乎', url: 'https://www.zhihu.com/search?type=content&q=' },
-  { id: 'bilibili', name: 'B站', url: 'https://search.bilibili.com/all?keyword=' },
-  { id: 'weibo', name: '微博', url: 'https://s.weibo.com/weibo?q=' },
-  { id: 'baidu', name: '百度', url: 'https://www.baidu.com/s?wd=' },
+  { id: 'bing', name: '必应', url: 'https://www.bing.com/search?q=', favicon: 'https://icons.duckduckgo.com/ip3/www.bing.com.ico' },
+  { id: 'google', name: 'Google', url: 'https://www.google.com/search?q=', favicon: 'https://icons.duckduckgo.com/ip3/www.google.com.ico' },
+  { id: 'ddgs', name: 'DuckDuckGo', url: 'https://duckduckgo.com/?q=', favicon: 'https://icons.duckduckgo.com/ip3/duckduckgo.com.ico' },
+  { id: 'zhihu', name: '知乎', url: 'https://www.zhihu.com/search?type=content&q=', favicon: 'https://icons.duckduckgo.com/ip3/www.zhihu.com.ico' },
+  { id: 'bilibili', name: 'B站', url: 'https://search.bilibili.com/all?keyword=', favicon: 'https://icons.duckduckgo.com/ip3/www.bilibili.com.ico' },
+  { id: 'weibo', name: '微博', url: 'https://s.weibo.com/weibo?q=', favicon: 'https://icons.duckduckgo.com/ip3/weibo.com.ico' },
+  { id: 'baidu', name: '百度', url: 'https://www.baidu.com/s?wd=', favicon: 'https://icons.duckduckgo.com/ip3/www.baidu.com.ico' },
 ];
 
 const engineById = (id) => SEARCH_ENGINES.find(e => e.id === id) || SEARCH_ENGINES[0];
-
-function resolveDefaultEngine() {
-  const cached = sessionStorage.getItem('navi-default-engine');
-  if (cached) return engineById(cached);
-  return engineById('bing');
-}
-
-let currentEngine = resolveDefaultEngine();
+let currentEngine = engineById(sessionStorage.getItem('navi-default-engine') || 'bing');
 
 async function detectNetworkAndUpdate() {
   if (sessionStorage.getItem('navi-default-engine')) return;
@@ -26,12 +19,29 @@ async function detectNetworkAndUpdate() {
     await fetch('https://www.google.com/favicon.ico', { mode: 'no-cors', signal: controller.signal });
     clearTimeout(timer);
     sessionStorage.setItem('navi-default-engine', 'google');
-    currentEngine = engineById('google');
-    const sel = document.getElementById('engineSelect');
-    if (sel) sel.value = 'google';
+    updateEngineUI(engineById('google'));
   } catch {
     sessionStorage.setItem('navi-default-engine', 'bing');
   }
+}
+
+function updateEngineUI(engine) {
+  currentEngine = engine;
+  const btn = document.getElementById('engineBtn');
+  const img = btn.querySelector('.ef-icon');
+  const label = btn.querySelector('.ef-label');
+  img.src = engine.favicon;
+  label.textContent = engine.name;
+  document.querySelectorAll('.eo').forEach(el => el.classList.toggle('active', el.dataset.id === engine.id));
+}
+
+function closeDropdown() {
+  document.getElementById('engineDropdown').classList.remove('open');
+  document.removeEventListener('click', closeDropdownOutside);
+}
+
+function closeDropdownOutside(e) {
+  if (!e.target.closest('.engine-select')) closeDropdown();
 }
 
 const Header = {
@@ -62,11 +72,19 @@ const Header = {
               </button>
             </div>
             <div class="engine-select">
-              <select id="engineSelect">
+              <button class="ef-btn" id="engineBtn">
+                <img class="ef-icon" src="${currentEngine.favicon}" alt="">
+                <span class="ef-label">${currentEngine.name}</span>
+                <span class="ef-arrow">▾</span>
+              </button>
+              <div class="ef-dropdown" id="engineDropdown">
                 ${SEARCH_ENGINES.map(eng => `
-                  <option value="${eng.id}"${eng.id === currentEngine.id ? ' selected' : ''}>${eng.name}</option>
+                  <button class="eo${eng.id === currentEngine.id ? ' active' : ''}" data-id="${eng.id}">
+                    <img class="ef-icon" src="${eng.favicon}" alt="">
+                    ${eng.name}
+                  </button>
                 `).join('')}
-              </select>
+              </div>
             </div>
           </div>
           <div class="header-actions">
@@ -83,31 +101,41 @@ const Header = {
 
   init() {
     const themeToggle = document.getElementById('themeToggle');
-    themeToggle.addEventListener('click', () => {
-      Theme.toggle();
-      this.updateThemeIcon();
-    });
+    themeToggle.addEventListener('click', () => { Theme.toggle(); this.updateThemeIcon(); });
     this.updateThemeIcon();
 
     const hpToggle = document.getElementById('hpToggle');
-    const homeKey = 'navi-homepage';
-    if (localStorage.getItem(homeKey) === 'true') hpToggle.classList.add('on');
+    if (localStorage.getItem('navi-homepage') === 'true') hpToggle.classList.add('on');
     hpToggle.addEventListener('click', () => {
-      const isSet = localStorage.getItem(homeKey) === 'true';
-      if (isSet) {
-        localStorage.removeItem(homeKey);
+      if (localStorage.getItem('navi-homepage') === 'true') {
+        localStorage.removeItem('navi-homepage');
         hpToggle.classList.remove('on');
         App.showToast('已取消首页设置');
       } else {
-        localStorage.setItem(homeKey, 'true');
+        localStorage.setItem('navi-homepage', 'true');
         hpToggle.classList.add('on');
         App.showToast('请在浏览器设置中手动将本页设为主页');
       }
     });
 
-    document.getElementById('engineSelect').addEventListener('change', (e) => {
-      currentEngine = engineById(e.target.value);
+    document.getElementById('engineBtn').addEventListener('click', () => {
+      const dd = document.getElementById('engineDropdown');
+      dd.classList.toggle('open');
+      if (dd.classList.contains('open')) {
+        setTimeout(() => document.addEventListener('click', closeDropdownOutside), 10);
+      }
+    });
+
+    document.getElementById('engineDropdown').addEventListener('click', (e) => {
+      const opt = e.target.closest('.eo');
+      if (!opt) return;
+      updateEngineUI(engineById(opt.dataset.id));
+      closeDropdown();
       document.getElementById('searchInput').focus();
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeDropdown();
     });
 
     const searchInput = document.getElementById('searchInput');
@@ -116,40 +144,26 @@ const Header = {
     const doSearch = () => {
       const query = searchInput.value.trim();
       if (!query) return;
-      if (query.startsWith('/')) {
-        App.searchLinks(query.slice(1));
-        return;
-      }
+      if (query.startsWith('/')) { App.searchLinks(query.slice(1)); return; }
       window.open(currentEngine.url + encodeURIComponent(query), '_blank');
     };
 
     searchBtn.addEventListener('click', doSearch);
-    searchInput.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter') doSearch();
-    });
-    searchInput.addEventListener('input', () => {
-      App.searchLinks(searchInput.value);
-    });
+    searchInput.addEventListener('keydown', (e) => { if (e.key === 'Enter') doSearch(); });
+    searchInput.addEventListener('input', () => { App.searchLinks(searchInput.value); });
 
     document.addEventListener('keydown', (e) => {
       if (e.key === '/' && !e.ctrlKey && !e.metaKey) {
         const tag = document.activeElement?.tagName;
-        if (tag !== 'INPUT' && tag !== 'TEXTAREA') {
-          e.preventDefault();
-          searchInput.focus();
-        }
+        if (tag !== 'INPUT' && tag !== 'TEXTAREA') { e.preventDefault(); searchInput.focus(); }
       }
-      if (e.key === 'Escape') {
-        searchInput.blur();
-        App.clearSearch();
-      }
+      if (e.key === 'Escape') { searchInput.blur(); App.clearSearch(); }
     });
 
     detectNetworkAndUpdate();
   },
 
   updateThemeIcon() {
-    const toggle = document.getElementById('themeToggle');
-    toggle.textContent = Theme.getCurrent() === 'dark' ? '☀️' : '🌙';
+    document.getElementById('themeToggle').textContent = Theme.getCurrent() === 'dark' ? '☀️' : '🌙';
   }
 };
