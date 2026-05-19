@@ -1,7 +1,6 @@
 NAV_DATA.categories.push({
-  id: "desktop", name: "装机必备", icon: "", links: [
+  id: "desktop", name: "本地工具", icon: "", links: [
     { title: "7-Zip", url: "https://www.7-zip.org/", desc: "免费开源压缩工具｜解压全能王", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly93d3cuNy16aXAub3JnLw==" },
-    { title: "Everything", url: "https://www.voidtools.com/", desc: "文件秒搜工具｜比 Windows 搜索快 100 倍", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly93d3cudm9pZHRvb2xzLmNvbS8=" },
     { title: "Geek Uninstaller", url: "https://geekuninstaller.com/", desc: "强力卸载工具｜清除残余文件和注册表", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly9nZWVrdW5pbnN0YWxsZXIuY29tLw==" },
     { title: "SpaceSniffer", url: "http://www.uderzo.it/main_products/space_sniffer/", desc: "磁盘空间分析｜可视化占用一目了然", icon: "https://favicon.png.pub/v1/aHR0cDovL3d3dy51ZGVyem8uaXQvbWFpbl9wcm9kdWN0cy9zcGFjZV9zbmlmZmVyLw==" },
     { title: "Snipaste", url: "https://www.snipaste.com/", desc: "截图贴图神器｜截图后悬浮在屏幕上", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly93d3cuc25pcGFzdGUuY29tLw==" },
@@ -9,6 +8,7 @@ NAV_DATA.categories.push({
     { title: "PotPlayer", url: "https://potplayer.daum.net/", desc: "最强视频播放器｜万能格式+极致性能", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly9wb3RwbGF5ZXIuZGF1bS5uZXQv" },
     { title: "Notepad++", url: "https://notepad-plus-plus.org/", desc: "轻量级文本编辑器｜代码/笔记通用", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly9ub3RlcGFkLXBsdXMtcGx1cy5vcmcv" },
     { title: "VLC", url: "https://www.videolan.org/", desc: "万能媒体播放器｜几乎能播一切格式", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly93d3cudmlkZW9sYW4ub3JnLw==" },
+    { title: "VS Code", url: "https://code.visualstudio.com/", desc: "微软开源编辑器｜插件生态最强，几乎能写一切", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly9jb2RlLnZpc3VhbHN0dWRpby5jb20v" },
     { title: "SumatraPDF", url: "https://www.sumatrapdfreader.org/", desc: "极速 PDF 阅读器｜轻量 PDF/EPUB/CBR", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly93d3cuc3VtYXRyYXBkZnJlYWRlci5vcmcv" },
     { title: "Ditto", url: "https://ditto-cp.sourceforge.io/", desc: "剪贴板增强｜历史记录+多端同步", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly9kaXR0by1jcC5zb3VyY2Vmb3JnZS5pby8=" },
     { title: "OBS Studio", url: "https://obsproject.com/", desc: "开源录屏直播｜专业级推流/录制", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly9vYnNwcm9qZWN0LmNvbS8=" },
@@ -19,6 +19,7 @@ NAV_DATA.categories.push({
     { title: "CrystalDiskInfo", url: "https://crystalmark.info/en/", desc: "硬盘健康检测｜SMART 状态一目了然", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly9jcnlzdGFsbWFyay5pbmZvL2VuLw==" },
     { title: "Listary", url: "https://www.listary.com/", desc: "文件快速定位｜双击 Ctrl 即刻搜索", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly93d3cubGlzdGFyeS5jb20v" },
     { title: "CPU-Z", url: "https://www.cpuid.com/", desc: "CPU/内存/主板检测｜装机验机必备", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly93d3cuY3B1aWQuY29tLw==" },
+    { title: "Everything", url: "https://www.voidtools.com/", desc: "文件秒搜工具｜比 Windows 搜索快 100 倍", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly93d3cudm9pZHRvb2xzLmNvbS8=" },
     { title: "ScreenToGif", url: "https://www.screentogif.com/", desc: "轻量级 GIF 录制｜录屏+编辑一体", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly93d3cuc2NyZWVudG9naWYuY29tLw==" },
     { title: "AutoHotkey", url: "https://www.autohotkey.com/", desc: "自动化脚本工具｜自定义快捷键/宏", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly93d3cuYXV0b2hvdGtleS5jb20v" },
     { title: "HWiNFO", url: "https://www.hwinfo.com/", desc: "硬件诊断大全｜温度/电压/风扇全面监控", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly93d3cuaHdpbmZvLmNvbS8=" },
