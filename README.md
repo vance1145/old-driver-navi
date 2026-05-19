@@ -79,4 +79,4 @@ NAV_DATA.categories.push({
 
 ---
 
-⭐ 如果这个项目对你有帮助，欢迎给个 Star！
+⭐ 如果这个项目对你有帮助，欢迎给它个 Star！
