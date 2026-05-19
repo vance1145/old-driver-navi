@@ -31,6 +31,5 @@ NAV_DATA.categories.push({
     { title: "TTSMaker", url: "https://ttsmaker.cn/", desc: "免费文字转语音｜支持多语言多音色", icon: "" },
     { title: "幕布", url: "https://mubu.com/", desc: "极简大纲笔记｜一键转思维导图", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly9tdWJ1LmNvbS8=" },
     { title: "百度脑图", url: "https://naotu.baidu.com/", desc: "百度出品｜在线免费思维导图工具", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly9uYW90dS5iYWlkdS5jb20v" },
-    { title: "翻页时钟", url: "https://flipclocker.com/", desc: "全屏翻页时钟｜专注/展示/装饰", icon: "" },
   ]
 });
