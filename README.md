@@ -14,8 +14,7 @@
 - 📌 **自定义链接** — 添加/编辑/删除个人收藏，支持导入/导出，存储于浏览器本地
 - 🌓 **深色模式** — 跟随系统或手动切换，偏好自动保存
 - 📱 **响应式布局** — 桌面 4 列到手机单列，自动适配各种屏幕
-- ✅ **默认 SFW** — 日常内容安全，`?mode=nsfw` 可解锁额外分类（小朋友不要看哦，需要确认年龄）
-
+- ✅ **默认 SFW** — 日常内容安全，`?mode=nsfw` 可解锁额外分类
 ## 本地运行
 
 直接浏览器打开 `index.html`，或用任意静态服务器：
@@ -39,7 +38,6 @@ assets/
   js/
     data/init.js               # NAV_DATA = { categories: [] }
     data/{ai,tools,...}.js     # 各自 push 到 NAV_DATA.categories
-    data/adult.js              # 动态加载（?mode=nsfw）
     utils/theme.js             # 主题切换与持久化
     utils/storage.js           # localStorage 封装
     components/header.js       # 顶栏、搜索、搜索引擎选择
