@@ -27,7 +27,7 @@ NAV_DATA.categories.push({
     { title: "腾讯帮小忙", url: "https://tool.browser.qq.com/", desc: "腾讯在线工具箱合集", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly90b29sLmJyb3dzZXIucXEuY29t" },
     { title: "Temp Mail", url: "https://www.moakt.com/zh", desc: "临时邮箱保护隐私", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly93d3cubW9ha3QuY29t" },
     { title: "在线录屏", url: "https://toolwa.com/record/", desc: "免安装在线录屏录像", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly90b29sd2EuY29t" },
-    { title: "TTSMaker", url: "https://ttsmaker.cn/", desc: "免费文字转语音", icon: "" },
+    { title: "TTSMaker", url: "https://ttsmaker.cn/", desc: "免费文字转语音", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly90dHNtYWtlci5jbi8=" },
     { title: "幕布", url: "https://mubu.com/", desc: "极简大纲笔记转思维导图", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly9tdWJ1LmNvbS8=" },
   ]
 });

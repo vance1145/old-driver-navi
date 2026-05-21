@@ -6,7 +6,7 @@ NAV_DATA.categories.push({
     { title: "itch.io", url: "https://itch.io/", desc: "独立游戏发布与试玩", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly9pdGNoLmlvLw==" },
     { title: "Nexus Mods", url: "https://www.nexusmods.com/", desc: "全球最大游戏模组社区", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly93d3cubmV4dXNtb2RzLmNvbS8=" },
     { title: "SteamDB", url: "https://steamdb.info/", desc: "史低价格与折扣历史查询", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly9zdGVhbWRiLmluZm8v" },
-    { title: "Switch520", url: "https://www.switch520.com/", desc: "用过都说好，谢谢老区长", icon: "" },
+    { title: "Switch520", url: "https://www.switch520.com/", desc: "用过都说好，谢谢老区长", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly93d3cuc3dpdGNoNTIwLmNvbS8=" },
     { title: "鲲Gal", url: "https://www.kungal.com/", desc: "GalGame 交流与汉化", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly93d3cua3VuZ2FsLmNvbS8=" },
     { title: "GGBase", url: "https://ggbases.dlgal.com/", desc: "GalGame 资源站", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly9nZ2Jhc2VzLmRsZ2FsLmNvbS8=" },
     { title: "Poki", url: "https://poki.com/zh", desc: "上千款免费在线小游戏", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly9wb2tpLmNvbS8=" },
