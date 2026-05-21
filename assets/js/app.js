@@ -70,12 +70,12 @@ const App = {
 
     if (results.length === 0) {
       header.classList.add('show');
-      header.innerHTML = `搜索 "<strong>${trimmed}</strong>" 未找到匹配站点`;
+      header.innerHTML = `搜索 "<strong>${escapeHtml(trimmed)}</strong>" 未找到匹配站点`;
       return;
     }
 
     header.classList.add('show');
-    header.innerHTML = `搜索 "<strong>${trimmed}</strong>" 共找到 ${results.reduce((s, c) => s + c.links.length, 0)} 个结果 <span style="cursor:pointer;margin-left:10px;color:var(--accent)" onclick="App.clearSearch()">✕ 清除</span>`;
+    header.innerHTML = `搜索 "<strong>${escapeHtml(trimmed)}</strong>" 共找到 ${results.reduce((s, c) => s + c.links.length, 0)} 个结果 <span style="cursor:pointer;margin-left:10px;color:var(--accent)" onclick="App.clearSearch()">✕ 清除</span>`;
     container.innerHTML = Category.renderSearchResults(results, trimmed);
   },
 
@@ -133,6 +133,10 @@ const App = {
         this.showToast('标题和链接不能为空');
         return;
       }
+      if (!isSafeUrl(url)) {
+        this.showToast('仅支持 http/https/ftp/mailto 链接');
+        return;
+      }
 
       const editId = modal.dataset.editId;
       const customLinks = Storage.getCustomLinks();
@@ -187,7 +191,7 @@ const App = {
     const existing = document.getElementById('homepageGuideModal');
     if (existing) existing.remove();
 
-    const cleanUrl = window.location.href.split('#')[0];
+    const cleanUrl = escapeHtml(window.location.href.split('#')[0]);
 
     const overlay = document.createElement('div');
     overlay.className = 'modal-overlay show';

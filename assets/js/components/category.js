@@ -41,7 +41,7 @@ const Category = {
       return `
         <div class="empty-state">
           <div class="empty-state-icon">🔍</div>
-          <div class="empty-state-text">未找到与 "<strong>${query}</strong>" 相关的站点</div>
+          <div class="empty-state-text">未找到与 "<strong>${escapeHtml(query)}</strong>" 相关的站点</div>
         </div>
       `;
     }

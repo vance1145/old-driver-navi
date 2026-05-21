@@ -15,16 +15,20 @@ const LinkCard = {
     const id = linkId || `${categoryId}-${link.title.replace(/\s+/g, '-')}`;
     const iconUrl = toFaviconUrl(link.icon);
     const showImg = Boolean(iconUrl);
+    const userControlled = isCustom || categoryId === 'custom';
+    const title = userControlled ? escapeHtml(link.title) : link.title;
+    const desc = userControlled ? escapeHtml(link.desc || '') : (link.desc || '');
+    const fallback = userControlled ? escapeHtml(link.title.charAt(0)) : link.title.charAt(0);
     return `
       <div class="cl-item" data-link-id="${id}" data-category="${categoryId}" draggable="false">
         <span class="cl-num">${index + 1}</span>
         ${showImg
           ? `<img class="cl-icon" src="${iconUrl}" alt="" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-             <div class="cl-icon-fallback" style="display:none">${link.title.charAt(0)}</div>`
-          : `<div class="cl-icon-fallback">${link.title.charAt(0)}</div>`
+             <div class="cl-icon-fallback" style="display:none">${fallback}</div>`
+          : `<div class="cl-icon-fallback">${fallback}</div>`
         }
-        <span class="cl-title">${link.title}</span>
-        <span class="cl-desc">${link.desc || ''}</span>
+        <span class="cl-title">${title}</span>
+        <span class="cl-desc">${desc}</span>
         ${isCustom ? `
         <div class="cl-actions">
           <button class="cl-act edit-link" data-link-id="${id}" title="编辑">✎</button>
@@ -72,7 +76,7 @@ const LinkCard = {
       const categoryId = item.dataset.category;
       const link = this.findLink(linkId, categoryId);
       if (link && link.url) {
-        window.open(link.url, '_blank');
+        window.open(link.url, '_blank', 'noopener');
       }
     });
   }

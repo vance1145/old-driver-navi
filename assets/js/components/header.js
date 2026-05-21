@@ -154,7 +154,7 @@ const Header = {
       const query = searchInput.value.trim();
       if (!query) return;
       if (query.startsWith('/')) { App.searchLinks(query.slice(1)); return; }
-      window.open(currentEngine.url + encodeURIComponent(query), '_blank');
+      window.open(currentEngine.url + encodeURIComponent(query), '_blank', 'noopener');
     };
 
     searchBtn.addEventListener('click', doSearch);
