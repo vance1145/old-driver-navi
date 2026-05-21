@@ -1,31 +1,36 @@
 function toFaviconUrl(icon) {
-  if (!icon) return '';
+  if (!icon) return { primary: '', fallback: '' };
   try {
     const b64 = icon.match(/favicon\.png\.pub\/v1\/(\S+)/)?.[1];
     if (b64) {
       const url = atob(b64);
-      return `https://www.google.com/s2/favicons?domain=${new URL(url).hostname}&sz=64`;
+      const hostname = new URL(url).hostname;
+      return {
+        primary: `https://www.google.com/s2/favicons?domain=${hostname}&sz=64`,
+        fallback: `https://${hostname}/favicon.ico`
+      };
     }
   } catch {}
-  return icon;
+  return { primary: icon, fallback: '' };
 }
 
 const LinkCard = {
   render(link, categoryId, index, isCustom = false, linkId = null) {
     const id = linkId || `${categoryId}-${link.title.replace(/\s+/g, '-')}`;
-    const iconUrl = toFaviconUrl(link.icon);
-    const showImg = Boolean(iconUrl);
+    const { primary, fallback: fbUrl } = toFaviconUrl(link.icon);
+    const showImg = Boolean(primary);
     const userControlled = isCustom || categoryId === 'custom';
     const title = userControlled ? escapeHtml(link.title) : link.title;
     const desc = userControlled ? escapeHtml(link.desc || '') : (link.desc || '');
-    const fallback = userControlled ? escapeHtml(link.title.charAt(0)) : link.title.charAt(0);
+    const charFallback = userControlled ? escapeHtml(link.title.charAt(0)) : link.title.charAt(0);
+    const fbAttr = fbUrl ? ` data-fallback="${fbUrl}"` : '';
     return `
       <div class="cl-item" data-link-id="${id}" data-category="${categoryId}" draggable="false">
         <span class="cl-num">${index + 1}</span>
         ${showImg
-          ? `<img class="cl-icon" src="${iconUrl}" alt="" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-             <div class="cl-icon-fallback" style="display:none">${fallback}</div>`
-          : `<div class="cl-icon-fallback">${fallback}</div>`
+          ? `<img class="cl-icon" src="${primary}" alt="" loading="lazy"${fbAttr} onerror="var f=this.dataset.fallback;if(f&&this.src!==f){this.src=f;}else{this.style.display='none';this.nextElementSibling.style.display='flex';}">
+             <div class="cl-icon-fallback" style="display:none">${charFallback}</div>`
+          : `<div class="cl-icon-fallback">${charFallback}</div>`
         }
         <span class="cl-title">${title}</span>
         <span class="cl-desc">${desc}</span>

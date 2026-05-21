@@ -15,3 +15,7 @@ function isSafeUrl(url) {
     return false;
   }
 }
+
+function faviconFallbackUrl(url) {
+  try { return `https://${new URL(url).hostname}/favicon.ico`; } catch { return ''; }
+}

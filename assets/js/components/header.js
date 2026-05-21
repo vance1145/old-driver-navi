@@ -84,7 +84,7 @@ const Header = {
             <div class="engine-select">
               <button class="ef-btn" id="engineBtn">
                 <span style="position:relative;display:inline-flex;align-items:center">
-                  <img class="ef-icon" src="${currentEngine.favicon}" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                  <img class="ef-icon" src="${currentEngine.favicon}" alt="" data-fallback="${faviconFallbackUrl(currentEngine.url)}" onerror="var f=this.dataset.fallback;if(f&&this.src!==f){this.src=f;}else{this.style.display='none';this.nextElementSibling.style.display='flex';}">
                   <span class="ef-icon ef-icon-fb" style="display:none">${currentEngine.name.charAt(0)}</span>
                 </span>
                 <span class="ef-label">${currentEngine.name}</span>
@@ -94,7 +94,7 @@ const Header = {
                 ${SEARCH_ENGINES.map(eng => `
                   <button class="eo${eng.id === currentEngine.id ? ' active' : ''}" data-id="${eng.id}">
                     <span style="position:relative;display:inline-flex;align-items:center;flex-shrink:0">
-                      <img class="ef-icon" src="${eng.favicon}" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                      <img class="ef-icon" src="${eng.favicon}" alt="" data-fallback="${faviconFallbackUrl(eng.url)}" onerror="var f=this.dataset.fallback;if(f&&this.src!==f){this.src=f;}else{this.style.display='none';this.nextElementSibling.style.display='flex';}">
                       <span class="ef-icon ef-icon-fb" style="display:none">${eng.name.charAt(0)}</span>
                     </span>
                     ${eng.name}
