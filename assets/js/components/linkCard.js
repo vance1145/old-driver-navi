@@ -11,8 +11,8 @@ function toFaviconUrl(icon, linkUrl) {
       const url = atob(b64);
       const hostname = new URL(url).hostname;
       return {
-        primary: `https://www.google.com/s2/favicons?domain=${hostname}&sz=64`,
-        fallback: `https://${hostname}/favicon.ico`
+        primary: `https://${hostname}/favicon.ico`,
+        fallback: `https://www.google.com/s2/favicons?domain=${hostname}&sz=64`
       };
     }
   } catch {}
