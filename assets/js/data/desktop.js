@@ -7,7 +7,7 @@ NAV_DATA.categories.push({
     { title: "火绒", url: "https://www.huorong.cn/", desc: "轻量免费杀毒无广告", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly93d3cuaHVvcm9uZy5jbi8=" },
     { title: "PowerToys", url: "https://learn.microsoft.com/en-us/windows/powertoys/", desc: "微软官方工具集", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly9sZWFybi5taWNyb3NvZnQuY29tL2VuLXVzL3dpbmRvd3MvcG93ZXJ0b3lzLw==" },
     { title: "VLC", url: "https://www.videolan.org/", desc: "万能媒体播放器", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly93d3cudmlkZW9sYW4ub3JnLw==" },
-    { title: "PotPlayer", url: "https://potplayer.daum.net/", desc: "最强本地视频播放", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly9wb3RwbGF5ZXIuZGF1bS5uZXQv" },
+    { title: "PotPlayer", url: "https://potplayer.tv/", desc: "最强本地视频播放", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly9wb3RwbGF5ZXIudHYv" },
     { title: "Notepad++", url: "https://notepad-plus-plus.org/", desc: "轻量级文本编辑器", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly9ub3RlcGFkLXBsdXMtcGx1cy5vcmcv" },
     { title: "VS Code", url: "https://code.visualstudio.com/", desc: "插件生态最强的编辑器", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly9jb2RlLnZpc3VhbHN0dWRpby5jb20v" },
     { title: "SumatraPDF", url: "https://www.sumatrapdfreader.org/", desc: "极速 PDF/EPUB 阅读器", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly93d3cuc3VtYXRyYXBkZnJlYWRlci5vcmcv" },
