@@ -1,5 +1,10 @@
-function toFaviconUrl(icon) {
-  if (!icon) return { primary: '', fallback: '' };
+function toFaviconUrl(icon, linkUrl) {
+  if (!icon) {
+    if (linkUrl) {
+      try { return { primary: `https://${new URL(linkUrl).hostname}/favicon.ico`, fallback: '' }; } catch {}
+    }
+    return { primary: '', fallback: '' };
+  }
   try {
     const b64 = icon.match(/favicon\.png\.pub\/v1\/(\S+)/)?.[1];
     if (b64) {
@@ -17,7 +22,7 @@ function toFaviconUrl(icon) {
 const LinkCard = {
   render(link, categoryId, index, isCustom = false, linkId = null) {
     const id = linkId || `${categoryId}-${link.title.replace(/\s+/g, '-')}`;
-    const { primary, fallback: fbUrl } = toFaviconUrl(link.icon);
+    const { primary, fallback: fbUrl } = toFaviconUrl(link.icon, link.url);
     const showImg = Boolean(primary);
     const userControlled = isCustom || categoryId === 'custom';
     const title = userControlled ? escapeHtml(link.title) : link.title;
@@ -28,7 +33,7 @@ const LinkCard = {
       <div class="cl-item" data-link-id="${id}" data-category="${categoryId}" draggable="false">
         <span class="cl-num">${index + 1}</span>
         ${showImg
-          ? `<img class="cl-icon" src="${primary}" alt="" loading="lazy"${fbAttr} onerror="var f=this.dataset.fallback;if(f&&this.src!==f){this.src=f;}else{this.style.display='none';this.nextElementSibling.style.display='flex';}">
+          ? `<img class="cl-icon" src="${primary}" alt="" loading="lazy"${fbAttr} onload="if(!this.naturalWidth){this.style.display='none';this.nextElementSibling.style.display='flex';}" onerror="var f=this.dataset.fallback;if(f&&this.src!==f){this.src=f;}else{this.style.display='none';this.nextElementSibling.style.display='flex';}">
              <div class="cl-icon-fallback" style="display:none">${charFallback}</div>`
           : `<div class="cl-icon-fallback">${charFallback}</div>`
         }
