@@ -1,0 +1,24 @@
+<!DOCTYPE html><html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,viewport-fit=cover"><meta name=description content=图灵社区成立于2005年6月，以策划出版高质量的科技书籍为核心业务，主要出版领域包括计算机、电子电气、数学统计、科普等，通过引进国际高水平的教材、专著，以及发掘国内优秀原创作品等途径，为目标读者提供一流的内容。><meta http-equiv=X-UA-Compatible content="ie=edge"><meta name=format-detection content="telephone=no, email=no"><link rel=icon href=/favicon.png><title>图灵社区</title><script>window.AliyunCaptchaConfig = {
+      region: "cn",
+      prefix: "95y7qi",
+    };</script><script src=https://o.alicdn.com/captcha-frontend/aliyunCaptcha/AliyunCaptcha.js></script><script>window.onload = function () {
+      // 阻止双击放大
+      var lastTouchEnd = 0;
+      document.addEventListener('touchstart', function (event) {
+        if (event.touches.length > 1) {
+          event.preventDefault();
+        }
+      });
+      document.addEventListener('touchend', function (event) {
+        var now = (new Date()).getTime();
+        if (now - lastTouchEnd <= 300) {
+          event.preventDefault();
+        }
+        lastTouchEnd = now;
+      }, false);
+
+      // 阻止双指放大
+      // document.addEventListener('gesturestart', function(event) {
+      //   event.preventDefault();
+      // });
+    }</script><link href=/css/chunk-03b78556.12135afe.css rel=prefetch><link href=/css/chunk-04483193.f835e983.css rel=prefetch><link href=/css/chunk-05a726f8.b06c6df9.css rel=prefetch><link href=/css/chunk-08c83fac.4e27ac07.css rel=prefetch><link href=/css/chunk-0b51de72.487547f8.css rel=prefetch><link href=/css/chunk-0c889aa6.25d58d24.css rel=prefetch><link href=/css/chunk-1cf3e1fa.088c2c97.css rel=prefetch><link href=/css/chunk-223ec464.3d20f800.css rel=prefetch><link href=/css/chunk-288fcbc3.89e20ad3.css rel=prefetch><link href=/css/chunk-2f453b98.3eed5061.css rel=prefetch><link href=/css/chunk-33c38aa8.94a2b491.css rel=prefetch><link href=/css/chunk-36f31334.f7a4495a.css rel=prefetch><link href=/css/chunk-3b1c2f20.2243d0ca.css rel=prefetch><link href=/css/chunk-3e0f4e8a.ca3ebc66.css rel=prefetch><link href=/css/chunk-4077f827.306f1536.css rel=prefetch><link href=/css/chunk-533aa451.9e8d37b2.css rel=prefetch><link href=/css/chunk-5e33ac1a.fc60cf61.css rel=prefetch><link href=/css/chunk-64c5e244.aec62c3b.css rel=prefetch><link href=/css/chunk-75270c2b.b4ad9c7a.css rel=prefetch><link href=/css/chunk-9496abe6.f6941bfa.css rel=prefetch><link href=/css/chunk-996b2d92.dd44dc1c.css rel=prefetch><link href=/css/chunk-c3a0fdfa.0e375a0d.css rel=prefetch><link href=/css/chunk-c6839f36.b7a40588.css rel=prefetch><link href=/css/chunk-d014973c.dab1ee26.css rel=prefetch><link href=/js/chunk-03b78556.68fd6a26.js rel=prefetch><link href=/js/chunk-04483193.ea08e691.js rel=prefetch><link href=/js/chunk-05a726f8.0e48ade1.js rel=prefetch><link href=/js/chunk-08c83fac.622fcfca.js rel=prefetch><link href=/js/chunk-0b51de72.e57063a3.js rel=prefetch><link href=/js/chunk-0c889aa6.a5e27bf4.js rel=prefetch><link href=/js/chunk-1cf3e1fa.19c856df.js rel=prefetch><link href=/js/chunk-223ec464.f46e8822.js rel=prefetch><link href=/js/chunk-288fcbc3.6829ec60.js rel=prefetch><link href=/js/chunk-2f453b98.ade6ca5a.js rel=prefetch><link href=/js/chunk-33c38aa8.f1c141e0.js rel=prefetch><link href=/js/chunk-36f31334.0224ddbf.js rel=prefetch><link href=/js/chunk-3b1c2f20.410cf31a.js rel=prefetch><link href=/js/chunk-3e0f4e8a.61e9a7eb.js rel=prefetch><link href=/js/chunk-4077f827.472a2730.js rel=prefetch><link href=/js/chunk-533aa451.abf068d2.js rel=prefetch><link href=/js/chunk-5e33ac1a.6adfc06a.js rel=prefetch><link href=/js/chunk-64c5e244.ac352e22.js rel=prefetch><link href=/js/chunk-75270c2b.cfa87356.js rel=prefetch><link href=/js/chunk-9496abe6.5aad9c99.js rel=prefetch><link href=/js/chunk-996b2d92.e059773b.js rel=prefetch><link href=/js/chunk-c3a0fdfa.79276da7.js rel=prefetch><link href=/js/chunk-c6839f36.90260b73.js rel=prefetch><link href=/js/chunk-d014973c.394b41d6.js rel=prefetch><link href=/css/app.4472cf44.css rel=preload as=style><link href=/css/chunk-vendors.91543f7f.css rel=preload as=style><link href=/js/app.923b6618.js rel=preload as=script><link href=/js/chunk-vendors.18020e1f.js rel=preload as=script><link href=/css/chunk-vendors.91543f7f.css rel=stylesheet><link href=/css/app.4472cf44.css rel=stylesheet></head><body><noscript><strong>We're sorry but ituring-mobile3 doesn't work properly without JavaScript enabled. Please enable it to continue.</strong></noscript><div id=app></div><script src=/js/chunk-vendors.18020e1f.js></script><script src=/js/app.923b6618.js></script></body></html>

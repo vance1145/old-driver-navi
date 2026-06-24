@@ -1,15 +1,15 @@
 const SEARCH_ENGINES = [
-  { id: 'google', name: 'Google', url: 'https://www.google.com/search?q=', favicon: 'https://icons.duckduckgo.com/ip3/www.google.com.ico' },
-  { id: 'bing', name: '必应', url: 'https://www.bing.com/search?q=', favicon: 'https://icons.duckduckgo.com/ip3/www.bing.com.ico' },
-  { id: 'ddgs', name: 'DuckDuckGo', url: 'https://duckduckgo.com/?q=', favicon: 'https://icons.duckduckgo.com/ip3/duckduckgo.com.ico' },
-  { id: 'youtube', name: 'YouTube', url: 'https://www.youtube.com/results?search_query=', favicon: 'https://icons.duckduckgo.com/ip3/www.youtube.com.ico' },
-  { id: 'bilibili', name: 'B站', url: 'https://search.bilibili.com/all?keyword=', favicon: 'https://icons.duckduckgo.com/ip3/www.bilibili.com.ico' },
-  { id: 'xhsh', name: '小红书', url: 'https://www.xiaohongshu.com/search_result?keyword=', favicon: 'https://icons.duckduckgo.com/ip3/www.xiaohongshu.com.ico' },
-  { id: 'reddit', name: 'Reddit', url: 'https://www.reddit.com/search/?q=', favicon: 'https://icons.duckduckgo.com/ip3/www.reddit.com.ico' },
-  { id: 'zhihu', name: '知乎', url: 'https://www.zhihu.com/search?type=content&q=', favicon: 'https://icons.duckduckgo.com/ip3/www.zhihu.com.ico' },
-  { id: 'twix', name: 'X', url: 'https://x.com/search?q=', favicon: 'https://x.com/favicon.ico' },
-  { id: 'weibo', name: '微博', url: 'https://s.weibo.com/weibo?q=', favicon: 'https://icons.duckduckgo.com/ip3/weibo.com.ico' },
-  { id: 'baidu', name: '百度', url: 'https://www.baidu.com/s?wd=', favicon: 'https://icons.duckduckgo.com/ip3/www.baidu.com.ico' },
+  { id: 'google', name: 'Google', url: 'https://www.google.com/search?q=', favicon: 'assets/icons/www.google.com.ico' },
+  { id: 'bing', name: '必应', url: 'https://www.bing.com/search?q=', favicon: 'assets/icons/www.bing.com.ico' },
+  { id: 'ddgs', name: 'DuckDuckGo', url: 'https://duckduckgo.com/?q=', favicon: 'assets/icons/duckduckgo.com.ico' },
+  { id: 'youtube', name: 'YouTube', url: 'https://www.youtube.com/results?search_query=', favicon: 'assets/icons/www.youtube.com.ico' },
+  { id: 'bilibili', name: 'B站', url: 'https://search.bilibili.com/all?keyword=', favicon: 'assets/icons/search.bilibili.com.ico' },
+  { id: 'xhsh', name: '小红书', url: 'https://www.xiaohongshu.com/search_result?keyword=', favicon: 'assets/icons/www.xiaohongshu.com.ico' },
+  { id: 'reddit', name: 'Reddit', url: 'https://www.reddit.com/search/?q=', favicon: 'assets/icons/www.reddit.com.ico' },
+  { id: 'zhihu', name: '知乎', url: 'https://www.zhihu.com/search?type=content&q=', favicon: 'assets/icons/www.zhihu.com.ico' },
+  { id: 'twix', name: 'X', url: 'https://x.com/search?q=', favicon: 'assets/icons/x.com.ico' },
+  { id: 'weibo', name: '微博', url: 'https://s.weibo.com/weibo?q=', favicon: 'assets/icons/s.weibo.com.ico' },
+  { id: 'baidu', name: '百度', url: 'https://www.baidu.com/s?wd=', favicon: 'assets/icons/www.baidu.com.ico' },
 ];
 
 const engineById = (id) => SEARCH_ENGINES.find(e => e.id === id) || SEARCH_ENGINES[0];
@@ -84,7 +84,7 @@ const Header = {
             <div class="engine-select">
               <button class="ef-btn" id="engineBtn">
                 <span style="position:relative;display:inline-flex;align-items:center">
-                  <img class="ef-icon" src="${currentEngine.favicon}" alt="" data-fallback="${faviconFallbackUrl(currentEngine.url)}" onerror="var f=this.dataset.fallback;if(f&&this.src!==f){this.src=f;}else{this.style.display='none';this.nextElementSibling.style.display='flex';}">
+                  <img class="ef-icon" src="${currentEngine.favicon}" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
                   <span class="ef-icon ef-icon-fb" style="display:none">${currentEngine.name.charAt(0)}</span>
                 </span>
                 <span class="ef-label">${currentEngine.name}</span>
@@ -94,7 +94,7 @@ const Header = {
                 ${SEARCH_ENGINES.map(eng => `
                   <button class="eo${eng.id === currentEngine.id ? ' active' : ''}" data-id="${eng.id}">
                     <span style="position:relative;display:inline-flex;align-items:center;flex-shrink:0">
-                      <img class="ef-icon" src="${eng.favicon}" alt="" data-fallback="${faviconFallbackUrl(eng.url)}" onerror="var f=this.dataset.fallback;if(f&&this.src!==f){this.src=f;}else{this.style.display='none';this.nextElementSibling.style.display='flex';}">
+                      <img class="ef-icon" src="${eng.favicon}" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
                       <span class="ef-icon ef-icon-fb" style="display:none">${eng.name.charAt(0)}</span>
                     </span>
                     ${eng.name}

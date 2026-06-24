@@ -1,42 +1,50 @@
 function toFaviconUrl(icon, linkUrl) {
-  if (!icon) {
-    if (linkUrl) {
-      try { return { primary: `https://${new URL(linkUrl).hostname}/favicon.ico`, fallback: '' }; } catch {}
-    }
-    return { primary: '', fallback: '' };
+  if (!icon && !linkUrl) return { primary: '' };
+  let hostname = '';
+  if (icon) {
+    try {
+      const b64 = icon.match(/favicon\.png\.pub\/v1\/(\S+)/)?.[1];
+      if (b64) {
+        hostname = new URL(atob(b64)).hostname;
+      } else {
+        hostname = new URL(icon).hostname;
+      }
+    } catch {}
   }
-  try {
-    const b64 = icon.match(/favicon\.png\.pub\/v1\/(\S+)/)?.[1];
-    if (b64) {
-      const url = atob(b64);
-      const hostname = new URL(url).hostname;
-      return {
-        primary: `https://${hostname}/favicon.ico`,
-        fallback: `https://www.google.com/s2/favicons?domain=${hostname}&sz=64`
-      };
-    }
-  } catch {}
-  return { primary: icon, fallback: '' };
+  if (!hostname && linkUrl) {
+    try { hostname = new URL(linkUrl).hostname; } catch {}
+  }
+  if (hostname) {
+    return { primary: `assets/icons/${hostname}.ico` };
+  }
+  return { primary: '' };
 }
 
 const LinkCard = {
   render(link, categoryId, index, isCustom = false, linkId = null) {
     const id = linkId || `${categoryId}-${link.title.replace(/\s+/g, '-')}`;
-    const { primary, fallback: fbUrl } = toFaviconUrl(link.icon, link.url);
-    const showImg = Boolean(primary);
     const userControlled = isCustom || categoryId === 'custom';
     const title = userControlled ? escapeHtml(link.title) : link.title;
     const desc = userControlled ? escapeHtml(link.desc || '') : (link.desc || '');
     const charFallback = userControlled ? escapeHtml(link.title.charAt(0)) : link.title.charAt(0);
-    const fbAttr = fbUrl ? ` data-fallback="${fbUrl}"` : '';
+
+    let iconHtml;
+    if (userControlled) {
+      iconHtml = `<div class="cl-icon-fallback">${charFallback}</div>`;
+    } else {
+      const { primary } = toFaviconUrl(link.icon, link.url);
+      if (primary) {
+        iconHtml = `<img class="cl-icon" src="${primary}" alt="" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+             <div class="cl-icon-fallback" style="display:none">${charFallback}</div>`;
+      } else {
+        iconHtml = `<div class="cl-icon-fallback">${charFallback}</div>`;
+      }
+    }
+
     return `
       <div class="cl-item" data-link-id="${id}" data-category="${categoryId}" draggable="false">
         <span class="cl-num">${index + 1}</span>
-        ${showImg
-          ? `<img class="cl-icon" src="${primary}" alt="" loading="lazy"${fbAttr} onload="if(!this.naturalWidth){this.style.display='none';this.nextElementSibling.style.display='flex';}" onerror="var f=this.dataset.fallback;if(f&&this.src!==f){this.src=f;}else{this.style.display='none';this.nextElementSibling.style.display='flex';}">
-             <div class="cl-icon-fallback" style="display:none">${charFallback}</div>`
-          : `<div class="cl-icon-fallback">${charFallback}</div>`
-        }
+        ${iconHtml}
         <span class="cl-title">${title}</span>
         <span class="cl-desc">${desc}</span>
         ${isCustom ? `
