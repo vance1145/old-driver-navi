@@ -71,6 +71,7 @@ const App = {
     if (results.length === 0) {
       header.classList.add('show');
       header.innerHTML = `搜索 "<strong>${escapeHtml(trimmed)}</strong>" 未找到匹配站点`;
+      container.innerHTML = '';
       return;
     }
 
