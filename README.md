@@ -2,7 +2,7 @@
 
 > 开箱即用的极简美观导航网站，支持自定义收藏和导入导出
 
-[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0) ![GitHub repo size](https://img.shields.io/github/repo-size/vance1145/old-driver-navi)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) ![GitHub repo size](https://img.shields.io/github/repo-size/vance1145/old-driver-navi)
 
 ![预览](assets/images/preview.png)
 
