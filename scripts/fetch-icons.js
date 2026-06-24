@@ -10,6 +10,7 @@ const HEADER_FILE = path.join(ROOT, 'assets', 'js', 'components', 'header.js');
 
 const FORCE = process.argv.includes('--force');
 const CONCURRENCY = 10;
+const PROXY = process.env.HTTPS_PROXY || process.env.HTTP_PROXY || process.env.https_proxy || process.env.http_proxy || '';
 
 function extractHostnames() {
   const hostnames = new Set();
@@ -55,32 +56,70 @@ function extractHostnames() {
 
 function download(url) {
   return new Promise((resolve, reject) => {
-    const client = url.startsWith('https') ? https : http;
-    const req = client.get(url, { timeout: 8000 }, (res) => {
-      if (res.statusCode >= 300 && res.statusCode < 400 && res.headers.location) {
-        download(res.headers.location).then(resolve).catch(reject);
-        res.resume();
-        return;
-      }
-      if (res.statusCode !== 200) {
-        res.resume();
-        reject(new Error(`HTTP ${res.statusCode}`));
-        return;
-      }
-      const chunks = [];
-      res.on('data', c => chunks.push(c));
-      res.on('end', () => {
-        const buf = Buffer.concat(chunks);
-        if (buf.length < 10) {
-          reject(new Error('Empty response'));
-        } else {
-          resolve(buf);
+    const parsed = new URL(url);
+    const isHttps = parsed.protocol === 'https:';
+
+    function doRequest(socket) {
+      const options = {
+        hostname: parsed.hostname,
+        port: parsed.port || (isHttps ? 443 : 80),
+        path: parsed.pathname + parsed.search,
+        timeout: 10000,
+        headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36' },
+      };
+      if (socket) { options.socket = socket; options.agent = false; }
+
+      const client = isHttps ? https : http;
+      const req = client.get(options, (res) => {
+        if (res.statusCode >= 300 && res.statusCode < 400 && res.headers.location) {
+          download(res.headers.location).then(resolve).catch(reject);
+          res.resume();
+          return;
         }
+        if (res.statusCode !== 200) {
+          res.resume();
+          reject(new Error(`HTTP ${res.statusCode}`));
+          return;
+        }
+        const chunks = [];
+        res.on('data', c => chunks.push(c));
+        res.on('end', () => {
+          const buf = Buffer.concat(chunks);
+          if (buf.length < 10) {
+            reject(new Error('Empty response'));
+          } else {
+            resolve(buf);
+          }
+        });
+        res.on('error', reject);
       });
-      res.on('error', reject);
-    });
-    req.on('error', reject);
-    req.on('timeout', () => { req.destroy(); reject(new Error('Timeout')); });
+      req.on('error', reject);
+      req.on('timeout', () => { req.destroy(); reject(new Error('Timeout')); });
+    }
+
+    if (PROXY && isHttps) {
+      const proxyUrl = new URL(PROXY);
+      const connectReq = http.request({
+        hostname: proxyUrl.hostname,
+        port: proxyUrl.port,
+        method: 'CONNECT',
+        path: `${parsed.hostname}:${parsed.port || 443}`,
+        timeout: 8000,
+      });
+      connectReq.on('connect', (res, socket) => {
+        if (res.statusCode !== 200) {
+          socket.destroy();
+          reject(new Error(`Proxy CONNECT ${res.statusCode}`));
+          return;
+        }
+        doRequest(socket);
+      });
+      connectReq.on('error', reject);
+      connectReq.on('timeout', () => { connectReq.destroy(); reject(new Error('Proxy timeout')); });
+      connectReq.end();
+    } else {
+      doRequest(null);
+    }
   });
 }
 
