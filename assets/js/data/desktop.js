@@ -25,5 +25,6 @@ NAV_DATA.categories.push({
     { title: "Obsidian", url: "https://obsidian.md/", desc: "本地知识库双向链接", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly9vYnNpZGlhbi5tZC8=" },
     { title: "AutoHotkey", url: "https://www.autohotkey.com/", desc: "自动化脚本与快捷键", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly93d3cuYXV0b2hvdGtleS5jb20v" },
     { title: "WinSCP", url: "https://winscp.net/", desc: "SFTP 文件传输与远程编辑", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly93aW5zY3AubmV0Lw==" },
+    { title: "Cursor", url: "https://www.cursor.com/", desc: "AI 驱动的智能代码编辑器", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly93d3cuY3Vyc29yLmNvbQ==" },
   ]
 });
