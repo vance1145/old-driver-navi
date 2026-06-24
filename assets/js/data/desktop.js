@@ -10,6 +10,7 @@ NAV_DATA.categories.push({
     { title: "PotPlayer", url: "https://potplayer.tv/", desc: "最强本地视频播放", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly9wb3RwbGF5ZXIudHYv" },
     { title: "Notepad++", url: "https://notepad-plus-plus.org/", desc: "轻量级文本编辑器", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly9ub3RlcGFkLXBsdXMtcGx1cy5vcmcv" },
     { title: "VS Code", url: "https://code.visualstudio.com/", desc: "插件生态最强的编辑器", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly9jb2RlLnZpc3VhbHN0dWRpby5jb20v" },
+    { title: "Cursor", url: "https://www.cursor.com/", desc: "AI 驱动的智能代码编辑器", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly93d3cuY3Vyc29yLmNvbQ==" },
     { title: "SumatraPDF", url: "https://www.sumatrapdfreader.org/", desc: "极速 PDF/EPUB 阅读器", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly93d3cuc3VtYXRyYXBkZnJlYWRlci5vcmcv" },
     { title: "SpaceSniffer", url: "http://www.uderzo.it/main_products/space_sniffer/", desc: "磁盘空间可视化分析", icon: "https://favicon.png.pub/v1/aHR0cDovL3d3dy51ZGVyem8uaXQvbWFpbl9wcm9kdWN0cy9zcGFjZV9zbmlmZmVyLw==" },
     { title: "Ditto", url: "https://sabrogden.github.io/Ditto/", desc: "剪贴板历史增强", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly9zYWJyb2dkZW4uZ2l0aHViLmlvL0RpdHRvLw==" },
@@ -25,6 +26,5 @@ NAV_DATA.categories.push({
     { title: "Obsidian", url: "https://obsidian.md/", desc: "本地知识库双向链接", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly9vYnNpZGlhbi5tZC8=" },
     { title: "AutoHotkey", url: "https://www.autohotkey.com/", desc: "自动化脚本与快捷键", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly93d3cuYXV0b2hvdGtleS5jb20v" },
     { title: "WinSCP", url: "https://winscp.net/", desc: "SFTP 文件传输与远程编辑", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly93aW5zY3AubmV0Lw==" },
-    { title: "Cursor", url: "https://www.cursor.com/", desc: "AI 驱动的智能代码编辑器", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly93d3cuY3Vyc29yLmNvbQ==" },
   ]
 });
