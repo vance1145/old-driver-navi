@@ -1,5 +1,5 @@
 NAV_DATA.categories.push({
-  id: "ai", name: "对话 AI", icon: "", links: [
+  id: "ai", name: "AI", icon: "🤖", links: [
     { title: "ChatGPT", url: "https://chat.openai.com", desc: "全球最受欢迎的 AI 对话助手", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly9jaGF0Lm9wZW5haS5jb20=" },
     { title: "Claude", url: "https://claude.ai", desc: "长文写作与深度分析首选", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly9jbGF1ZGUuYWk=" },
     { title: "Gemini", url: "https://gemini.google.com", desc: "多模态 AI，深度整合谷歌生态", icon: "https://favicon.png.pub/v1/aHR0cHM6Ly9nZW1pbmkuZ29vZ2xlLmNvbQ==" },
